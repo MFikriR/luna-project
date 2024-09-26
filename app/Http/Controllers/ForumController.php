@@ -3,39 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ForumTopic;
-use App\Models\ForumPost;
 
 class ForumController extends Controller
 {
-    // Menampilkan daftar topik forum
+    // Method untuk menampilkan halaman forum
     public function index()
     {
-        $topics = ForumTopic::all(); // Mengambil semua topik
-        return view('forum.index', compact('topics'));
-    }
+        // Data topik forum statis yang terkait dengan materi pembelajaran bahasa Inggris
+        $topics = [
+            [
+                'title' => 'How to Introduce Yourself in English',
+                'description' => 'Learn how to give a proper introduction about yourself in English.',
+            ],
+            [
+                'title' => 'Common Phrases for Self-Description',
+                'description' => 'Discuss various phrases and expressions to describe yourself effectively.',
+            ],
+            [
+                'title' => 'Talking About Your Hobbies and Interests',
+                'description' => 'Share tips on how to talk about your hobbies and interests during self-introductions.',
+            ],
+            [
+                'title' => 'Describing Other People',
+                'description' => 'Learn how to describe other people’s physical appearance and personality.',
+            ],
+        ];
 
-    // Menampilkan detail topik dengan postingan
-    public function show($id)
-    {
-        $topic = ForumTopic::findOrFail($id); // Mencari topik berdasarkan ID
-        $posts = ForumPost::where('topic_id', $id)->get(); // Mengambil semua posting di topik tersebut
-        return view('forum.show', compact('topic', 'posts'));
-    }
-
-    // Menambahkan posting baru
-    public function store(Request $request, $id)
-    {
-        $request->validate([
-            'content' => 'required|string'
-        ]);
-
-        ForumPost::create([
-            //'topic_id' => $id,
-            //'user_id' => auth()->id(), // Mengambil ID pengguna yang login
-            //'content' => $request->content
-        ]);
-
-        return redirect()->route('forum.show', $id);
+        // Mengirim data topik ke view forum
+        return view('forum', compact('topics'));
     }
 }

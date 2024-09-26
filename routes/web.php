@@ -29,12 +29,6 @@ Route::post('/quiz/submit', [QuizController::class, 'submitAnswer'])->name('quiz
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
 
-
-Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
-Route::get('/forum/{id}', [ForumController::class, 'show'])->name('forum.show');
-Route::post('/forum/{id}', [ForumController::class, 'store'])->name('forum.store');
-
-
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->name('register.store');
 
@@ -45,3 +39,6 @@ Route::post('/login', [CustomAuthController::class, 'login'])->name('login.store
 
 Route::get('/latihan', [LatihanController::class, 'show'])->name('latihan');
 Route::post('/latihan-submit', [LatihanController::class, 'submit'])->name('latihan.submit');
+
+
+Route::get('/forum', [ForumController::class, 'index']);
