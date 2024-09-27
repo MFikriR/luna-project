@@ -143,7 +143,7 @@
                 <li><a href="{{ route('latihan') }}">Latihan</a></li>
                 <li><a href="{{ route('quiz') }}">Quiz</a></li>
                 <li><a href="{{ route('video-tutorials') }}">Video Tutorials</a></li>
-                <li><a href="#">Forum</a></li>
+                <li><a href="{{ route('forum') }}">Forum</a></li>
                 <li><a href="{{ route('profile') }}">Profile</a></li>
             </ul>
         </div>
