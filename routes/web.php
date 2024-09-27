@@ -41,4 +41,4 @@ Route::get('/latihan', [LatihanController::class, 'show'])->name('latihan');
 Route::post('/latihan-submit', [LatihanController::class, 'submit'])->name('latihan.submit');
 
 
-Route::get('/forum', [ForumController::class, 'index']);
+Route::get('/forum', [ForumController::class, 'index'])->name(name: 'forum');
