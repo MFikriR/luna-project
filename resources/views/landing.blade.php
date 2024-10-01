@@ -108,7 +108,6 @@
     </style>
 </head>
 <body style="background-color: #47B5FF">
-
     <!-- Sidebar -->
     <div id="sidebar">
         <button id="sidebarToggle" class="btn" aria-label="Toggle Sidebar">☰</button>
@@ -134,7 +133,7 @@
         </div>
 
         <!-- Card Section -->
-        <div class="container mt-4">
+        <div class="container mt-10">
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
