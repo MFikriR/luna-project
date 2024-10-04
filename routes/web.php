@@ -22,6 +22,14 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::get('/drag-and-drop', [DragAndDropController::class, 'index'])->name('drag-and-drop');
 Route::get('/video-tutorials', [TutorialController::class, 'showVideoTutorials'])->name('video-tutorials');
 
+Route::get('/materi', function (){
+    return view('materi');
+});
+
+Route::get('/daftarmateri', function (){
+    return view('daftarmateri');
+});
+
 // Route untuk menampilkan halaman quiz
 Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
 // Route untuk memproses jawaban yang dikirim dari form
