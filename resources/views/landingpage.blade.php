@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="{{ asset('img/Developer activity-bro.png') }}" alt="Karakter Animasi Belajar Bahasa Inggris">
+                    <img src="{{ asset('img/gambar bicara.png') }}" alt="Karakter Animasi Belajar Bahasa Inggris">
                 </div>
             </div>
         </div>

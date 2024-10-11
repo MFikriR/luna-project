@@ -62,6 +62,7 @@
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
+            text-align: left;
         }
 
         /* Hover effect */
