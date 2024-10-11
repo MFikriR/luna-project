@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Guru & Siswa</title>
+    <title>Login Siswa</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         .container {
             max-width: 600px;
             margin-top: 50px;
         }
+
         .left-box {
             background: #103cbe;
             padding: 30px;
             color: white;
         }
+
         .right-box {
             padding: 30px;
         }
     </style>
 </head>
+
 <body style="background-color: #47B5FF">
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
 
     <!-- Main Container -->
-    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="container d-flex justify-content-center align-items-center pt-4">
 
         <!-- Login Container -->
         <div class="row border rounded-5 p-3 bg-white shadow box-area w-100">
@@ -34,76 +45,49 @@
                     <img src="images/1.png" class="img-fluid" style="width: 200px;">
                 </div>
                 <p class="fs-3">Selamat Datang</p>
-                <small class="text-white text-center">Silahkan login sebagai Guru atau Siswa</small>
+                <small class="text-white text-center">Silahkan login sebagai Siswa</small>
             </div>
 
             <!-- Right Box -->
             <div class="col-md-7 right-box">
-                <h3 class="mb-4">Login Portal</h3>
+                <h3 class="mb-4">Login Portal Siswa</h3>
 
-                <!-- Tab Navigation -->
-                <ul class="nav nav-tabs mb-4" id="loginTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="student-tab" data-bs-toggle="tab" data-bs-target="#student" type="button" role="tab" aria-controls="student" aria-selected="true">Siswa</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="teacher-tab" data-bs-toggle="tab" data-bs-target="#teacher" type="button" role="tab" aria-controls="teacher" aria-selected="false">Guru</button>
-                    </li>
-                </ul>
-
-                <!-- Tab Content -->
-                <div class="tab-content" id="loginTabContent">
-                    <!-- Student Tab -->
-                    <div class="tab-pane fade show active" id="student" role="tabpanel" aria-labelledby="student-tab">
-                        <form>
-                            <div class="mb-3">
-                                <label for="studentEmail" class="form-label">Email Siswa</label>
-                                <input type="email" class="form-control" id="studentEmail" placeholder="Masukkan email siswa">
-                            </div>
-                            <div class="mb-3">
-                                <label for="studentPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="studentPassword" placeholder="Masukkan password">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Login Siswa</button>
-                        </form>
+                <!-- Student Login Form -->
+                <form action="{{ route('login.store') }}" method="POST">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="studentEmail" class="form-label">Email Siswa</label>
+                        <input type="email" class="form-control" id="studentEmail" name="email" placeholder="Masukkan email siswa" required>
                     </div>
-
-                    <!-- Teacher Tab -->
-                    <div class="tab-pane fade" id="teacher" role="tabpanel" aria-labelledby="teacher-tab">
-                        <form>
-                            <div class="mb-3">
-                                <label for="teacherEmail" class="form-label">Email Guru</label>
-                                <input type="email" class="form-control" id="teacherEmail" placeholder="Masukkan email guru">
-                            </div>
-                            <div class="mb-3">
-                                <label for="teacherPassword" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="teacherPassword" placeholder="Masukkan password">
-                            </div>
-                            <button type="submit" class="btn btn-primary w-100">Login Guru</button>
-                        </form>
+                    <div class="mb-3">
+                        <label for="studentPassword" class="form-label">Password</label>
+                        <div class="input-group">
+                            <input type="password" class="form-control" id="studentPassword" name="password" placeholder="Masukkan password" required>
+                            <span class="input-group-text toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
                     </div>
-                </div>
+                    <button type="submit" class="btn btn-primary w-100">Login Siswa</button>
+                </form>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Get elements for the tabs and buttons
-        const studentTab = new bootstrap.Tab(document.querySelector('#student-tab'));
-        const teacherTab = new bootstrap.Tab(document.querySelector('#teacher-tab'));
-        const switchToTeacher = document.getElementById('switchToTeacher');
-        const switchToStudent = document.getElementById('switchToStudent');
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('studentPassword');
 
-        // Add event listener for switching to Teacher tab
-        switchToTeacher.addEventListener('click', function() {
-            teacherTab.show(); // Show the Teacher tab
-        });
+        togglePassword.addEventListener('click', function() {
+            // Toggle password visibility
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
 
-        // Add event listener for switching to Student tab
-        switchToStudent.addEventListener('click', function() {
-            studentTab.show(); // Show the Student tab
+            // Toggle the eye icon
+            this.querySelector('i').classList.toggle('fa-eye-slash');
         });
     </script>
 </body>
+
 </html>

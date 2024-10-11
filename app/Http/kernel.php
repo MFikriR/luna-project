@@ -10,6 +10,4 @@ class CheckRole // Replace with the actual class name
         // Middleware lainnya...
         'role' => \App\Http\Middleware\CheckRole::class,
     ];
-
-    // Other methods and logic for your middleware class
 }
