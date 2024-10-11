@@ -8,11 +8,20 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <style>
+        body{
+            background-color:#47B5FF;
+            font-family: 'Poppins', sans-serif;
+        }
         /* Sidebar style */
         #sidebar {
             width: 250px;
             transition: all 0.3s;
+            
         }
 
         #sidebar.active {
@@ -71,11 +80,14 @@
                 <h4>Menu</h4>
             </div>
             <ul class="list-unstyled components">
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Materi</a></li>
-                <li><a href="#">Latihan Soal</a></li>
-                <li><a href="#">Nilai</a></li>
-                <li><a href="#">Pengaturan</a></li>
+                <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
+                <li><a href="materi">Materi</a></li>
+                <li><a href="{{ route('video-tutorials') }}">Video Tutorial</a></li>
+                <li><a href="{{ route('latihan') }}">Latihan Soal</a></li>
+                <li><a href="{{ route('drag-and-drop') }}">Drag and Drop</a></li>
+                <li><a href="{{ route('quiz') }}">Quiz</a></li>
+                <li><a href="{{ route('forum') }}">Forum</a></li>
+                <li><a href="{{ route('profile') }}">Profile</a></li>
             </ul>
         </nav>
 
@@ -91,7 +103,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span id="username">@yield('username', 'Admin')</span>
+                                    <span id="username">@yield('username', 'User')</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item" href="#">Pengaturan Profil</a></li>

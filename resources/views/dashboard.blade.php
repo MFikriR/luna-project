@@ -39,7 +39,7 @@
                     <img src="https://via.placeholder.com/150" alt="Lesson 3">
                     <div class="card-body">
                         <h3 class="card-title">Video Pembelajaran</h3>
-                        <p class="card-text">Practice through drag-and-drop exercises.</p>
+                        <p class="card-text">tttttt.</p>
                         <a href="#" class="btn">Start Watch</a>
                     </div>
                 </div>

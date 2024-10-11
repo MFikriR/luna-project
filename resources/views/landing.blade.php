@@ -110,6 +110,10 @@
         .navbar {
             display: inline-block;
             margin-right: 20px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navbar ul {
@@ -158,8 +162,6 @@
         .footer a:hover {
             text-decoration: underline;
         }
-
-
     </style>
 </head>
 <body style="background-color: #47B5FF">
@@ -199,7 +201,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Ninja Team. All rights reserved.</p>
+            <p>&copy; 2024 Kucing Team. All rights reserved.</p>
             <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
         </div>
     </footer>

@@ -10,4 +10,7 @@ class DashboardController extends Controller
     {
         return view('dashboard');
     }
+    public function viewMateri(){
+        return view ('materi');
+    }
 }

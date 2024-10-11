@@ -18,17 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/', [LandingPageController::class, 'index']);
+Route::get('/daftarmateri', [LandingPageController::class, 'lihatMateri'])->name('lihatMateri');
+
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/drag-and-drop', [DragAndDropController::class, 'index'])->name('drag-and-drop');
 Route::get('/video-tutorials', [TutorialController::class, 'showVideoTutorials'])->name('video-tutorials');
 
-Route::get('/materi', function (){
-    return view('materi');
-});
+Route::get('/materi', [DashboardController::class,'viewMateri'])->name('materi');
 
-Route::get('/daftarmateri', function (){
-    return view('daftarmateri');
-});
 
 // Route untuk menampilkan halaman quiz
 Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
