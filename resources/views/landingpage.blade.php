@@ -46,6 +46,14 @@
             color: #333;
             padding: 50px 0;
         }
+
+        .navbar-nav .nav-link {
+        margin-right: 15px; /* Tambahkan jarak antar item navbar */
+        padding: 8px 15px; /* Sesuaikan padding untuk membuat jarak di dalam item */
+        color: #000;
+    }
+
+
     </style>
 </head>
 <body>
