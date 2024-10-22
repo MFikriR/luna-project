@@ -42,7 +42,7 @@
             <!-- Left Box -->
             <div class="col-md-5 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
                 <div class="featured-image mb-3">
-                    <img src="images/1.png" class="img-fluid" style="width: 200px;">
+                    <img src="{{ asset('img/orang belajar.png') }}" class="img-fluid" style="width: 200px;">
                 </div>
                 <p class="fs-3">Selamat Datang</p>
                 <small class="text-white text-center">Silahkan login sebagai Siswa</small>
