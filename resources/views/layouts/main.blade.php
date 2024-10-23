@@ -83,12 +83,13 @@
             <ul class="list-unstyled components">
                 <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                 <li><a href="materi">Materi</a></li>
-                <li><a href="{{ route('video-tutorials') }}">Video Tutorial</a></li>
-                <li><a href="{{ route('latihan') }}">Latihan Soal</a></li>
-                <li><a href="{{ route('drag-and-drop') }}">Drag and Drop</a></li>
-                <li><a href="{{ route('quiz') }}">Quiz</a></li>
+                {{-- <li><a href="{{ route('video-tutorials') }}">Video Tutorial</a></li> --}}
+                {{-- <li><a href="{{ route('latihan') }}">Latihan Soal</a></li> --}}
+                {{-- <li><a href="{{ route('drag-and-drop') }}">Drag and Drop</a></li> --}}
+                <li><a href="{{ route('mini-games') }}">Mini Games</a></li>
+                {{-- <li><a href="{{ route('quiz') }}">Quiz</a></li> --}}
                 <li><a href="{{ route('forum') }}">Forum</a></li>
-                <li><a href="{{ route('profile') }}">Profile</a></li>
+                {{-- <li><a href="{{ route('profile') }}">Profile</a></li> --}}
             </ul>
         </nav>
 
@@ -104,10 +105,10 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                     role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span id="username">@yield('username', 'User')</span>
+                                    <span id="username">{{ Auth::user()->name ?? 'User' }}</span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Pengaturan Profil</a></li>
+                                    <li><a class="dropdown-item" href="{{'profile'}}">Pengaturan Profil</a></li>
                                     <li><a class="dropdown-item" href="#">Logout</a></li>
                                 </ul>
                             </li>

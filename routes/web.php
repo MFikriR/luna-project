@@ -52,3 +52,45 @@ Route::post('/latihan-submit', [LatihanController::class, 'submit'])->name('lati
 
 
 Route::get('/forum', [ForumController::class, 'index'])->name(name: 'forum');
+
+Route::get('/bab1', function () {
+    return view('bab1');
+})->name('bab1');
+
+Route::get('/bab2', function () {
+    return view('bab2');
+})->name('bab2');
+
+Route::get('/bab3', function () {
+    return view('bab3');
+})->name('bab3');
+
+Route::get('/bab4', function () {
+    return view('bab4');
+})->name('bab4');
+
+Route::get('/bab5', function () {
+    return view('bab5');
+})->name('bab5');
+// Tambahkan routes untuk bab-bab lainnya
+
+
+// Route untuk halaman utama Mini Games
+Route::get('/mini-games', function () {
+    return view('mini-games'); // Mengarah ke view mini_games.blade.php
+})->name('mini-games');
+
+// Route untuk game Drag and Drop
+Route::get('/mini-games/drag-and-drop', function () {
+    return view('games.drag_and_drop'); // Mengarah ke view drag_and_drop.blade.php
+})->name('drag_and_drop_game');
+
+// Route untuk game Tebak Arti
+Route::get('/mini-games/tebak-arti', function () {
+    return view('games.tebak_arti'); // Mengarah ke view tebak_arti.blade.php
+})->name('tebak_arti_game');
+
+// Route untuk game Percakapan
+Route::get('/mini-games/percakapan', function () {
+    return view('games.percakapan'); // Mengarah ke view percakapan.blade.php
+})->name('percakapan_game');

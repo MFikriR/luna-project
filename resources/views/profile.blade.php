@@ -14,12 +14,6 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-            transition: margin-left 0.3s ease, width 0.3s ease;
-        }
-
-        .container.active {
-            margin-left: 250px;
-            width: calc(100% - 250px);
         }
 
         h1 {
@@ -29,7 +23,6 @@
 
         .profile-info {
             text-align: center;
-            
         }
 
         .profile-info img {
@@ -43,34 +36,30 @@
             font-size: 18px;
             color: #555;
         }
-
-        /* Content styles */
-        .content {
-            transition: margin-left 0.3s ease, width 0.3s ease;
-            margin-left: 0;
-            width: 100%;
-        }
-
-        .content.active {
-            margin-left: 0px;
-        }
-
     </style>
-</head>
-<body>
+
     <div class="container">
         <div class="content">
-
             <h1>Profil Pengguna</h1>
             <div class="profile-info">
-                <img src="https://via.placeholder.com/150" alt="Foto Profil">
-                <p><strong>Nama:</strong></p>  {{--{{ $user->name }} --}}
-                <p><strong>Email:</strong> </p> {{--{{ $user->email }} --}}
-                <p><strong>Member Since:</strong> </p> {{-- {{ $user->created_at->format('d M Y') }} --}}
+                <!-- Menampilkan Foto Profil -->
+                <img src="{{ asset('images/profiles/' . $user->foto_profil) }}" alt="Foto Profil">
+
+                <!-- Menampilkan Nama -->
+                <p><strong>Nama:</strong> {{ $user->name }}</p>
+
+                <!-- Menampilkan Email -->
+                <p><strong>Email:</strong> {{ $user->email }}</p>
+
+                <!-- Menampilkan Tanggal Lahir -->
+                <p><strong>Tanggal Lahir:</strong> {{ $user->tanggal_lahir }}</p>
+
+                <!-- Menampilkan Jenis Kelamin -->
+                <p><strong>Jenis Kelamin:</strong> {{ ucfirst($user->jenis_kelamin) }}</p>
+
+                <!-- Menampilkan Tanggal Bergabung -->
+                <p><strong>Member Since:</strong> {{ $user->created_at->format('d M Y') }}</p>
             </div>
         </div>
     </div>
-
-</body>
-</html>
 @endsection
