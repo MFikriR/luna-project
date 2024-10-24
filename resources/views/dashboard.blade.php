@@ -7,7 +7,7 @@
         <div class="jumbotron">
             <h1 class="display-4">Selamat Datang {{ Auth::user()->name ?? 'User' }}!</h1>
             <p class="lead">Mari belajar Bahasa Inggris Introduction and Self-description</p>
-            <p>Untuk Kelas 7 SMP/MTs.</p>
+            <p>Untuk Kelas 11 SMA.</p>
         </div>
     </div>
 
@@ -15,35 +15,44 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col">
-                <div class="card interactive-card" onclick="window.location.href='#'">
-                    <img src="{{ asset('img/buku.png') }}" alt="Lesson 1" style="width: 80%; height: auto; margin: auto; display: block;">
-                    <div class="card-body">
-                        <h3 class="card-title">Materi Pembelajaran</h3>
-                        <p class="card-text">Learn basic self-introduction phrases.</p>
-                        <a href="#" class="btn">Learn More</a>
+                <a href="{{ route('materi') }}" style="text-decoration: none; color: inherit;">
+                    <div class="card interactive-card">
+                        <img src="{{ asset('img/buku.png') }}" alt="Lesson 1" style="width: 80%; height: auto; margin: auto; display: block;">
+                        <div class="card-body">
+                            <h3 class="card-title">Materi Pembelajaran</h3>
+                            <p class="card-text">Learn basic self-introduction phrases.</p>
+                            <button class="btn">Learn More</button>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+            
             <div class="col">
-                <div class="card interactive-card" onclick="window.location.href='#'">
-                    <img src="{{ asset('img/game.png') }}" alt="Lesson 2" style="width: 80%; height: auto; margin: auto; display: block;">
-                    <div class="card-body">
-                        <h3 class="card-title">Mini Games</h3>
-                        <p class="card-text">Lets play and Learning.</p>
-                        <a href="#" class="btn">Start Game!</a>
+                <a href="{{ route('mini-games') }}" style="text-decoration: none; color: inherit;">
+                    <div class="card interactive-card">
+                        <img src="{{ asset('img/game.png') }}" alt="Lesson 2" style="width: 80%; height: auto; margin: auto; display: block;">
+                        <div class="card-body">
+                            <h3 class="card-title">Mini Games</h3>
+                            <p class="card-text">Let's play and learn.</p>
+                            <button class="btn">Start Game!</button>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+            
             <div class="col">
-                <div class="card interactive-card" onclick="window.location.href='#'">
-                    <img src="{{ asset('img/video.png') }}" alt="Lesson 3" style="width: 80%; height: auto; margin: auto; display: block;">
-                    <div class="card-body">
-                        <h3 class="card-title">Video Pembelajaran</h3>
-                        <p class="card-text">Lets learning with video.</p>
-                        <a href="#" class="btn">Start Watch</a>
+                <a href="{{ route('video-tutorials') }}" style="text-decoration: none; color: inherit;">
+                    <div class="card interactive-card">
+                        <img src="{{ asset('img/video.png') }}" alt="Lesson 3" style="width: 80%; height: auto; margin: auto; display: block;">
+                        <div class="card-body">
+                            <h3 class="card-title">Video Pembelajaran</h3>
+                            <p class="card-text">Let's learn with video.</p>
+                            <button class="btn">Start Watch</button>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
+            
         </div>
     </div>
 

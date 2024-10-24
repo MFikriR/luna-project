@@ -8,17 +8,18 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 1000px; /* Perbesar lebar maksimal container */
             margin: 0 auto;
             background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 77px; /* Perbesar padding */
+            border-radius: 12px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         h1 {
             text-align: center;
             color: #3498db;
+            font-size: 36px; /* Perbesar ukuran teks header */
         }
 
         .profile-info {
@@ -26,15 +27,20 @@
         }
 
         .profile-info img {
-            width: 150px;
-            height: 150px;
+            width: 200px; /* Perbesar ukuran gambar */
+            height: 200px; /* Perbesar ukuran gambar */
             border-radius: 50%;
-            margin-bottom: 20px;
+            margin-bottom: 30px; /* Perbesar margin bawah gambar */
         }
 
         .profile-info p {
-            font-size: 18px;
+            font-size: 22px; /* Perbesar ukuran teks deskripsi */
             color: #555;
+            margin-bottom: 15px; /* Tambahkan jarak antar teks */
+        }
+
+        .profile-info strong {
+            font-size: 24px; /* Perbesar ukuran teks tebal */
         }
     </style>
 

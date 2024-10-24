@@ -11,3 +11,4 @@ class CheckRole // Replace with the actual class name
         'role' => \App\Http\Middleware\CheckRole::class,
     ];
 }
+
