@@ -61,7 +61,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">Learn English for 7th Grade</a>
+            <a class="navbar-brand" href="#">Learn English for 11th Grade</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -101,7 +101,7 @@
                 <div class="col-lg-6 hero-text">
                     <div>
                         <h1 class="mb-4">Selamat Datang di Website </h1>
-                        <h1 class="mb-4">Learn English for 7th Grade</h1>
+                        <h1 class="mb-4">Learn English for 11th Grade</h1>
                         <p class="lead">Platform pembelajaran Bahasa Inggris interaktif untuk kalangan siswa. Mulailah belajar dengan materi yang menarik dan mudah dipahami.</p>
                         <a href="#introduction" class="btn btn-primary btn-lg mt-3">Pelajari Lebih Lanjut</a>
                     </div>

@@ -83,13 +83,8 @@
             <ul class="list-unstyled components">
                 <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                 <li><a href="materi">Materi</a></li>
-                {{-- <li><a href="{{ route('video-tutorials') }}">Video Tutorial</a></li> --}}
-                {{-- <li><a href="{{ route('latihan') }}">Latihan Soal</a></li> --}}
-                {{-- <li><a href="{{ route('drag-and-drop') }}">Drag and Drop</a></li> --}}
                 <li><a href="{{ route('mini-games') }}">Mini Games</a></li>
-                {{-- <li><a href="{{ route('quiz') }}">Quiz</a></li> --}}
                 <li><a href="{{ route('forum') }}">Forum</a></li>
-                {{-- <li><a href="{{ route('profile') }}">Profile</a></li> --}}
             </ul>
         </nav>
 
@@ -109,7 +104,12 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
                                     <li><a class="dropdown-item" href="{{'profile'}}">Pengaturan Profil</a></li>
-                                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                                    <li>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                        <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -135,5 +135,6 @@
         });
     </script>
 </body>
+
 
 </html>

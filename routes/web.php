@@ -12,6 +12,9 @@ use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DragAndDropController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\MateriController;
+use App\Http\Controllers\MiniGamesController;
+use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
 Route::get('/', function () {
@@ -77,9 +80,7 @@ Route::get('/bab5', function () {
 
 
 // Route untuk halaman utama Mini Games
-Route::get('/mini-games', function () {
-    return view('mini-games'); // Mengarah ke view mini_games.blade.php
-})->name('mini-games');
+Route::get('/mini-games', [DashboardController::class, 'viewMinigames'])->name('mini-games');
 
 // Route untuk game Drag and Drop
 Route::get('/mini-games/drag-and-drop', function () {
@@ -107,3 +108,15 @@ Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.logi
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 });
+
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
+    ->middleware('auth')
+    ->name('logout');
+
+// Routes yang membutuhkan autentikasi
+Route::middleware(['auth'])->group(function () {
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/forum', [ForumController::class, 'index'])->name('forum');
+// Route lainnya yang hanya dapat diakses setelah login
+});
+    

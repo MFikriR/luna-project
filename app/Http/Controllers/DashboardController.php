@@ -13,4 +13,7 @@ class DashboardController extends Controller
     public function viewMateri(){
         return view ('materi');
     }
+    public function viewMinigames(){
+        return view ('mini-games');
+    } 
 }

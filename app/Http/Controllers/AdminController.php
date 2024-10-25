@@ -20,7 +20,7 @@ class AdminController extends Controller
 
         // Cek login menggunakan guard admin
         if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->route('admin.admindashboard');
+            return redirect()->route('admin.dashboard');
         } else {
             return redirect()->back()->withErrors(['error' => 'Email atau password salah.']);
         }
