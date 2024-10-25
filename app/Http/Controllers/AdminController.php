@@ -20,9 +20,16 @@ class AdminController extends Controller
 
         // Cek login menggunakan guard admin
         if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.admindashboard');
         } else {
             return redirect()->back()->withErrors(['error' => 'Email atau password salah.']);
         }
     }
+
+    // Menampilkan dashboard admin
+    public function index()
+    {
+        return view('admin.admindashboard'); // Ganti dengan nama view dashboard admin yang sesuai
+    }
 }
+

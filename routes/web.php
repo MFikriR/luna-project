@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LatihanController;
@@ -94,3 +95,15 @@ Route::get('/mini-games/tebak-arti', function () {
 Route::get('/mini-games/percakapan', function () {
     return view('games.percakapan'); // Mengarah ke view percakapan.blade.php
 })->name('percakapan_game');
+
+// ADMIN (Do not change the route name)
+// Rute untuk menampilkan form login admin
+Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
+
+// Rute untuk menangani proses login admin
+Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
+
+// Rute untuk dashboard admin, dilindungi oleh middleware auth:admin
+Route::middleware('auth:admin')->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+});
