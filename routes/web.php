@@ -1,19 +1,20 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GameController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MateriController;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TutorialController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MiniGamesController;
 use App\Http\Controllers\DragAndDropController;
 use App\Http\Controllers\LandingPageController;
-use App\Http\Controllers\MateriController;
-use App\Http\Controllers\MiniGamesController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 
@@ -120,3 +121,14 @@ Route::get('/forum', [ForumController::class, 'index'])->name('forum');
 // Route lainnya yang hanya dapat diakses setelah login
 });
     
+
+
+// routes/web.php
+Route::get('/tebak_arti_game', [GameController::class, 'index'])->name('tebak_arti_game');
+Route::post('/tebak_arti_game/check', [GameController::class, 'checkAnswer'])->name('tebak_arti_game.check');
+
+
+
+
+// Route untuk halaman percakapan game
+Route::get('/percakapan-game', [GameController::class, 'showPercakapanGame'])->name('percakapan_game');
