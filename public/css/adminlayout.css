@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css');
 
 * {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 :root {
@@ -29,11 +31,10 @@ a {
 }
 
 li {
-    list-style: none;
+    list-style: none;;
 }
 
 /* SIDEBAR */
-
 #sidebar {
     position: fixed;
     width: 260px;
@@ -42,7 +43,7 @@ li {
     left: 0;
     height: 100%;
     overflow-y: auto;
-
+    text-decoration: none;
 }
 
 #sidebar .brand {
@@ -60,7 +61,9 @@ li {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
+
 
 #sidebar .icon-right {
     margin-left: auto;
@@ -71,7 +74,7 @@ li {
     padding: 0 20px;
 }
 
-#sidebar .side-menu a{
+#sidebar .side-menu a {
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -80,8 +83,8 @@ li {
     transition: all 0.3s ease;
     border-radius: 10px;
     margin: 4px 0;
+    text-decoration: none
 }
-
 
 /* Sidebar ketika ditutup */
 #sidebar.hide {
@@ -93,16 +96,19 @@ li {
 #sidebar.hide .side-menu a {
     justify-content: center;
     padding-left: 0; /* Hilangkan padding */
+    text-decoration: none
 }
 
 #sidebar .side-menu a:hover {
     background: var(--grey);
+    text-decoration: none
 }
 
 #sidebar .side-menu > li > a.active,
-#sidebar .side-menu > li > a:hover{
+#sidebar .side-menu > li > a:hover {
     background: var(--blue);
     color: var(--light);
+    text-decoration: none
 }
 
 #sidebar .side-dropdown {
@@ -111,21 +117,33 @@ li {
     overflow-y: hidden;
     transition: all 0.15s ease;
 }
+
 #sidebar .side-dropdown.show {
     max-height: 1000px;
 }
-#sidebar .side-dropdown a:hover {
-    color: var(--blue);
+
+#sidebar .side-dropdown a {
+    padding: 12px 32px; /* Tambahkan padding lebih besar di sebelah kiri */
+    color: var(--dark);
+    text-decoration: none; /* Hilangkan garis bawah */
 }
-    /* SIDEBAR */
+
+#sidebar .side-dropdown a:hover {
+    background: var(--grey); /* Tambahkan efek hover */
+}
+
+/* Gaya untuk konten utama */
 
 /* NAVBAR */
+
 /* CONTENT */
 #content {
-    position: relative;
-    width: calc(100% - 260px);
-    left: 260px;
-    transition: all .3s ease;
+    margin-left: 260px; /* Memberi ruang untuk sidebar */
+    padding: 20px; /* Padding untuk konten */
+    padding-top: 80px; /* Tambahkan padding untuk menghindari tumpang tindih dengan navbar */
+    width: calc(100% - 260px); /* Mengatur lebar konten utama */
+    position: relative; /* Posisi relatif untuk pemosisian elemen di dalamnya */
+    transition: margin-left .3s ease; /* Transisi halus ketika sidebar dibuka atau ditutup */
 }
 
 #sidebar.hide + #content {
@@ -134,118 +152,137 @@ li {
 }
 /* NAVBAR */
 nav {
-	background: var(--light);
-	height: 64px;
-	padding: 0 20px;
-	display: flex;
-	align-items: center;
-	grid-gap: 28px;
-	position: sticky;
-	top: 0;
-	left: 0;
-	z-index: 100;
+    background: var(--light);
+    height: 64px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 28px;
+    position: fixed; /* Mengubah dari sticky ke fixed */
+    top: 0; /* Memastikan navbar di atas */
+    left: 260px; /* Memberikan margin agar tidak tertutup oleh sidebar */
+    width: calc(100% - 260px); /* Menyesuaikan lebar navbar */
+    z-index: 100; /* Menjaga agar navbar di atas konten lainnya */
 }
+
 nav .toggle-sidebar {
-	font-size: 18px;
-	cursor: pointer;
+    font-size: 18px;
+    cursor: pointer;
 }
+
 nav form {
-	max-width: 400px;
-	width: 100%;
-	margin-right: auto;
+    max-width: 400px;
+    width: 100%;
+    margin-right: auto;
 }
+
 nav .form-group {
-	position: relative;
+    position: relative;
 }
+
 nav .form-group input {
-	width: 100%;
-	background: var(--grey);
-	border-radius: 5px;
-	border: none;
-	outline: none;
-	padding: 10px 36px 10px 16px;
-	transition: all .3s ease;
+    width: 100%;
+    background: var(--grey);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 10px 36px 10px 16px;
+    transition: all .3s ease;
 }
+
 nav .form-group input:focus {
-	box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
+    box-shadow: 0 0 0 1px var(--blue), 0 0 0 4px var(--light-blue);
 }
+
 nav .form-group .icon {
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	right: 16px;
-	color: var(--dark-grey);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 16px;
+    color: var(--dark-grey);
 }
+
 nav .nav-link {
-	position: relative;
+    position: relative;
 }
+
 nav .nav-link .icon {
-	font-size: 18px;
-	color: var(--dark);
+    font-size: 18px;
+    color: var(--dark);
 }
+
 nav .nav-link .badge {
-	position: absolute;
-	top: -12px;
-	right: -12px;
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	border: 2px solid var(--light);
-	background: var(--red);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--light);
-	font-size: 10px;
-	font-weight: 700;
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--light);
+    background: var(--red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--light);
+    font-size: 10px;
+    font-weight: 700;
 }
+
 nav .divider {
-	width: 1px;
-	background: var(--grey);
-	height: 12px;
-	display: block;
+    width: 1px;
+    background: var(--grey);
+    height: 12px;
+    display: block;
 }
+
 nav .profile {
-	position: relative;
+    position: relative;
 }
+
 nav .profile img {
-	width: 36px;
-	height: 36px;
-	border-radius: 50%;
-	object-fit: cover;
-	cursor: pointer;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
 }
+
 nav .profile .profile-link {
-	position: absolute;
-	top: calc(100% + 10px);
-	right: 0;
-	background: var(--light);
-	padding: 10px 0;
-	box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
-	border-radius: 10px;
-	width: 160px;
-	opacity: 0;
-	pointer-events: none;
-	transition: all .3s ease;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: var(--light);
+    padding: 10px 0;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, .1);
+    border-radius: 10px;
+    width: 160px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
 }
+
 nav .profile .profile-link.show {
-	opacity: 1;
-	pointer-events: visible;
-	top: 100%;
+    opacity: 1;
+    pointer-events: visible;
+    top: 100%;
 }
+
 nav .profile .profile-link a {
-	padding: 10px 16px;
-	display: flex;
-	grid-gap: 10px;
-	font-size: 14px;
-	color: var(--dark);
-	align-items: center;
-	transition: all .3s ease;
+    padding: 10px 16px;
+    display: flex;
+    grid-gap: 10px;
+    font-size: 14px;
+    color: var(--dark);
+    align-items: center;
+    transition: all .3s ease;
 }
+
 nav .profile .profile-link a:hover {
-	background: var(--grey);
+    background: var(--grey);
 }
+
 /* NAVBAR */
+
 
 /* DASHBOARD */
 .container-dashboard {
@@ -280,3 +317,140 @@ nav .profile .profile-link a:hover {
     font-size: 24px;
     font-weight: bold;
 }
+
+/* Daftar Siswa */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: #007bff; /* Warna biru Bootstrap */
+    color: white;
+}
+
+.table th, .table td {
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Warna biru Bootstrap */
+    border-color: #007bff; /* Border biru Bootstrap */
+}
+
+.btn-info {
+    background-color: #17a2b8; /* Warna info Bootstrap */
+    border-color: #17a2b8; /* Border info Bootstrap */
+}
+
+.btn-danger {
+    background-color: #dc3545; /* Warna merah Bootstrap */
+    border-color: #dc3545; /* Border merah Bootstrap */
+}
+
+
+/* Daftar Siswa */
+
+/* Update Siswa */
+
+.modal {
+    display: none; /* Sembunyikan modal secara default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Warna latar belakang gelap dengan transparansi */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Pastikan modal berada di atas elemen lain */
+    transition: opacity 0.3s ease; /* Transisi untuk efek halus */
+}
+
+.modal-content {
+    background: #fff; /* Warna latar belakang putih untuk konten modal */
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px; /* Lebar maksimal */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5); /* Bayangan untuk kedalaman */
+    animation: slideIn 0.3s ease; /* Animasi masuk modal */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px); /* Mulai dari atas */
+        opacity: 0; /* Transparan pada awal */
+    }
+    to {
+        transform: translateY(0); /* Posisi akhir */
+        opacity: 1; /* Menjadi terlihat */
+    }
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    color: #aaa; /* Warna close button */
+    cursor: pointer;
+    transition: color 0.3s; /* Transisi warna */
+}
+
+.close:hover {
+    color: #000; /* Warna saat hover */
+}
+
+h2 {
+    margin-top: 0; /* Hilangkan margin atas pada judul */
+    color: #333; /* Warna judul */
+}
+
+label {
+    display: block; /* Set label agar menjadi blok */
+    margin-bottom: 5px; /* Jarak bawah */
+    font-weight: bold; /* Tebal */
+    color: #555; /* Warna label */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    width: 100%; /* Lebar penuh */
+    padding: 10px; /* Padding untuk input */
+    margin-bottom: 15px; /* Jarak bawah */
+    border: 1px solid #ccc; /* Garis batas abu-abu */
+    border-radius: 4px; /* Sudut melengkung */
+    box-sizing: border-box; /* Menghitung padding dalam lebar */
+    transition: border-color 0.3s; /* Transisi warna batas */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #007bff; /* Warna batas saat fokus */
+    outline: none; /* Hilangkan outline */
+}
+
+button[type="submit"] {
+    background-color: #007bff; /* Warna latar belakang biru Bootstrap */
+    color: white; /* Warna teks putih */
+    padding: 10px 15px; /* Padding atas dan bawah, kanan dan kiri */
+    border: none; /* Hilangkan border */
+    border-radius: 4px; /* Sudut melengkung */
+    cursor: pointer; /* Tangan saat hover */
+    transition: background-color 0.3s; /* Transisi warna latar belakang */
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Warna saat hover */
+}
+
+.close {
+    float: right;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Update Siswa */

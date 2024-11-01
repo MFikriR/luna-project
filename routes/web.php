@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LoginController;
@@ -114,13 +115,20 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->middleware('auth')
     ->name('logout');
 
+// Daftar Siswa
+Route::get('/admin/daftar-siswa', [UserController::class, 'index'])->name('admin.daftar-siswa');
+Route::get('/siswa/{id}/edit', [UserController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{id}', [UserController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{id}', [UserController::class, 'destroy'])->name('siswa.destroy');
+// ----------------------------------------------------------------------------------------------------------- //
+
 // Routes yang membutuhkan autentikasi
 Route::middleware(['auth'])->group(function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/forum', [ForumController::class, 'index'])->name('forum');
 // Route lainnya yang hanya dapat diakses setelah login
 });
-    
+
 
 
 // routes/web.php

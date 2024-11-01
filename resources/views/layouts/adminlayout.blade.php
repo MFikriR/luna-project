@@ -19,10 +19,8 @@
                 <li>
                     <a href="#"><i class='bx bxs-user-detail icon'></i>Manajemen Siswa <i class='bx bx-chevron-right icon-right icon'></i></a>
                     <ul class="side-dropdown">
-                        <li><a href="#">Daftar Siswa</a></li>
+                        <li><a href="{{ route('admin.daftar-siswa')}}">Daftar Siswa</a></li>
                         <li><a href="#">Tambah Siswa</a></li>
-                        <li><a href="#">Update Siswa</a></li>
-                        <li><a href="#">Hapus Siswa</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class='bx bxs-user-circle icon'></i>Profile</a></li>

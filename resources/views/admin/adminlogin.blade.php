@@ -22,6 +22,20 @@
             margin-bottom: 20px;
             text-align: center;
         }
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer-text {
+            margin: 0;
+            color: #6c757d; /* Gray color */
+        }
     </style>
 </head>
 <body>
@@ -40,6 +54,10 @@
             <button type="submit" class="btn btn-primary btn-block">Login</button>
         </form>
     </div>
+
+    <footer>
+        <p class="footer-text">Made by Luna Team</p>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
