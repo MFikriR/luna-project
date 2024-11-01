@@ -70,6 +70,13 @@
             background-color: #007bff;
             color: white;
         }
+
+        .footer {
+            background-color:#333;
+            padding: 10px 0;
+            color:azure;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -123,6 +130,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p style="margin-top: 20px">© 2024 - Project Pembelajaran. All rights reserved.</p>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

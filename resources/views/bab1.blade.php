@@ -153,12 +153,13 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-        <a href="#intro">Bab 1: Offers & Suggestion</a>
-        <a href="#self-description">Bab 2: Self-Description</a>
-        <a href="#daily-activities">Bab 3: Daily Activities</a>
-        <a href="#hobbies">Bab 4: Hobbies and Interests</a>
-        <a href="#future-plans">Bab 5: Future Plans</a>
+        <a href="#offers-suggestion">Bab 1: Offers & Suggestions</a>
+        <a href="#opinions-thoughts">Bab 2: Opinions & Thoughts</a>
+        <a href="#party-time">Bab 3: Party Time</a>
+        <a href="#national-disaster">Bab 4: National Disaster</a>
+        <a href="#letter-writing">Bab 5: Letter Writing</a>
     </div>
+    
 
     <!-- Main Content -->
     <div class="main-content">
@@ -380,14 +381,44 @@
             </div>
         </div>
 
-        <!-- Latihan Soal -->
-        <h2>C: Latihan Soal</h2>
-        <p>Jawablah pertanyaan berikut dengan menggunakan kalimat yang telah dipelajari.</p>
-        <p><strong>1. What is your name?</strong></p>
-        <input type="text" class="form-control" placeholder="Tulis jawaban Anda">
+        <h2>C : Example Suggestions</h2>
+        <div class="example-box">
+            <div class="chat-wrapper">
+                <div class="chat-container">
+                    <!-- Percakapan Kiri (A) -->
+                    <div class="chat-row">
+                        <div class="chat-bubble left left-bubble" style="background-color:lightsalmon">
+                            <ul>
+                                <li>Let's go to the library.</li>
+                                <li>Let's go to movies.</li>
+                                <li>Why don't you do your homework before going out?</li>
+                                <li>We could eat at home today.</li>
+                                <li>What about eating at the new place?</li>
+                                <li>How about going to Sam's place first?</li>
+                                <li>I suggest that we call it a day.</li>
+                                <li>You need to change your sleeping habits.</li>
+                                <li>I think you should go and meet her.</li>
+                                <li>I think we should do it this way.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <p><strong>2. Where are you from?</strong></p>
-        <input type="text" class="form-control" placeholder="Tulis jawaban Anda">
+        <!-- Latihan Soal -->
+        <h2>D: Latihan Soal</h2>
+        <p>Jawablah pertanyaan berikut dengan menggunakan kalimat yang telah dipelajari.</p>
+
+        <p><strong>1. Bagaimana cara menawarkan bantuan kepada teman yang kesulitan dalam belajar?</strong></p>
+        <input type="text" class="form-control" placeholder="Tulis jawaban Anda, misalnya: 'Would you like some help with your studies?'">
+
+        <p><strong>2. Bagaimana Anda memberikan saran kepada seseorang yang ingin meningkatkan keterampilan berbahasa Inggris?</strong></p>
+        <input type="text" class="form-control" placeholder="Tulis jawaban Anda, misalnya: 'I suggest you practice speaking English every day.'">
+
+        <p><strong>3. Apa yang akan Anda tawarkan kepada teman yang baru saja mengalami hari yang berat?</strong></p>
+        <input type="text" class="form-control" placeholder="Tulis jawaban Anda, misalnya: 'Would you like to talk about it?'">
+
 
         <!-- Tombol Next -->
         <a href="#" class="btn-next">Next: Bab 2 - Self-Description</a>
