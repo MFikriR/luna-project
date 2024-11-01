@@ -177,6 +177,7 @@ nav form {
 }
 
 nav .form-group {
+    padding-top: 30px;
     position: relative;
 }
 
@@ -196,7 +197,7 @@ nav .form-group input:focus {
 
 nav .form-group .icon {
     position: absolute;
-    top: 50%;
+    top: 60%;
     transform: translateY(-50%);
     right: 16px;
     color: var(--dark-grey);

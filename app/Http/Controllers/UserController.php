@@ -39,7 +39,6 @@ class UserController extends Controller
         $siswa->email = $request->input('email');
         $siswa->tanggal_lahir = $request->input('tanggal_lahir');
         $siswa->jenis_kelamin = $request->input('jenis_kelamin');
-        $siswa->role = $request->input('role');
 
         if ($request->hasFile('foto_profil')) {
             $filePath = $request->file('foto_profil')->store('profile_pictures', 'public');
