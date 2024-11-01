@@ -49,50 +49,50 @@
         <div class="card-container">
             <!-- Card Bab 1 -->
             <div class="card">
-                <img src="{{ asset('img/bab1.png') }}" class="card-img-top" alt="Gambar Bab 1">
+                <img src="{{ asset('img/chapter1.png') }}" class="card-img-top" alt="Gambar Bab 1">
                 <div class="card-body">
-                    <h5 class="card-title">Bab 1: Introduction</h5>
-                    <p class="card-text">Pelajari dasar-dasar pengenalan diri dalam Bahasa Inggris.</p>
+                    <h5 class="card-title">Bab 1: Offers & Suggestions</h5>
+                    <p class="card-text">Pelajari cara memberikan penawaran dan saran dalam Bahasa Inggris.</p>
                     <a href="{{ route('bab1') }}" class="btn btn-primary">Pilih Bab 1</a>
                 </div>
             </div>
 
             <!-- Card Bab 2 -->
             <div class="card">
-                <img src="{{ asset('img/bab2.png') }}" class="card-img-top" alt="Gambar Bab 2">
+                <img src="{{ asset('img/chapter2.png') }}" class="card-img-top" alt="Gambar Bab 2">
                 <div class="card-body">
-                    <h5 class="card-title">Bab 2: Self-Description</h5>
-                    <p class="card-text">Pelajari cara mendeskripsikan diri sendiri dalam Bahasa Inggris.</p>
+                    <h5 class="card-title">Bab 2: Opinions & Thoughts</h5>
+                    <p class="card-text">Pelajari cara mengungkapkan pendapat dan pemikiran dalam Bahasa Inggris.</p>
                     <a href="{{ route('bab2') }}" class="btn btn-primary">Pilih Bab 2</a>
                 </div>
             </div>
 
             <!-- Card Bab 3 -->
             <div class="card">
-                <img src="{{ asset('img/bab3.png') }}" class="card-img-top" alt="Gambar Bab 3">
+                <img src="{{ asset('img/chapter3.png') }}" class="card-img-top" alt="Gambar Bab 3">
                 <div class="card-body">
-                    <h5 class="card-title">Bab 3: Daily Activities</h5>
-                    <p class="card-text">Pelajari bagaimana mendeskripsikan kegiatan sehari-hari.</p>
+                    <h5 class="card-title">Bab 3: Party Time</h5>
+                    <p class="card-text">Pelajari ungkapan-ungkapan yang digunakan saat mengadakan atau menghadiri pesta.</p>
                     <a href="{{ route('bab3') }}" class="btn btn-primary">Pilih Bab 3</a>
                 </div>
             </div>
 
             <!-- Card Bab 4 -->
             <div class="card">
-                <img src="{{ asset('img/bab4.png') }}" class="card-img-top" alt="Gambar Bab 4">
+                <img src="{{ asset('img/chapter4.png') }}" class="card-img-top" alt="Gambar Bab 4">
                 <div class="card-body">
-                    <h5 class="card-title">Bab 4: Hobbies and Interests</h5>
-                    <p class="card-text">Pelajari bagaimana menyebutkan hobi dan minatmu.</p>
+                    <h5 class="card-title">Bab 4: National Disaster - An Exposition</h5>
+                    <p class="card-text">Pelajari tentang bencana alam nasional dan cara menyajikan eksposisi terkait topik ini.</p>
                     <a href="{{ route('bab4') }}" class="btn btn-primary">Pilih Bab 4</a>
                 </div>
             </div>
 
             <!-- Card Bab 5 -->
             <div class="card">
-                <img src="{{ asset('img/bab5.png') }}" class="card-img-top" alt="Gambar Bab 5">
+                <img src="{{ asset('img/chapter5.png') }}" class="card-img-top" alt="Gambar Bab 5">
                 <div class="card-body">
-                    <h5 class="card-title">Bab 5: Future Plans</h5>
-                    <p class="card-text">Pelajari bagaimana menyebutkan rencana masa depanmu.</p>
+                    <h5 class="card-title">Bab 5: Letter Writing</h5>
+                    <p class="card-text">Pelajari cara menulis surat dalam berbagai konteks resmi dan tidak resmi.</p>
                     <a href="{{ route('bab5') }}" class="btn btn-primary">Pilih Bab 5</a>
                 </div>
             </div>
