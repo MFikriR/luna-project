@@ -34,6 +34,10 @@ Route::get('/video-tutorials', [TutorialController::class, 'showVideoTutorials']
 
 Route::get('/materi', [DashboardController::class,'viewMateri'])->name('materi');
 
+Route::get('/chapter1', function () {
+    return view('chapter1');
+})->name('chapter1');
+
 
 // Route untuk menampilkan halaman quiz
 Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
@@ -121,6 +125,10 @@ Route::get('/admin/daftar-siswa', [UserController::class, 'index'])->name('admin
 Route::get('/siswa/{id}/edit', [UserController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{id}', [UserController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{id}', [UserController::class, 'destroy'])->name('siswa.destroy');
+
+// Tambah Siswa
+Route::get('/admin/tambah-siswa', [UserController::class, 'create'])->name('admin.tambah-siswa');
+Route::post('/admin/tambah-siswa', [UserController::class, 'store'])->name('admin.simpan-siswa');
 // ----------------------------------------------------------------------------------------------------------- //
 
 // Routes yang membutuhkan autentikasi
