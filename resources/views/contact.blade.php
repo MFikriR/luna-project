@@ -3,46 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <!-- Bootstrap CSS -->
+    <title>Contact Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <style>
-        /* Flexbox untuk memastikan footer berada di bawah */
         body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
+            background-color: #47B5FF;
             font-family: 'Poppins', sans-serif;
         }
-
-        /* Hero section */
         .hero {
             background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
             color: #333;
             padding: 50px 0;
-            flex: 1; /* Membuat hero section memenuhi ruang yang tersedia */
         }
-
-        /* Navbar link */
-        .navbar-nav .nav-link {
-            margin-right: 15px;
-            padding: 8px 15px;
-            color: #000;
-        }
-        .navbar-nav .nav-link:hover {
-            color: #007bff;
-        }
-
-        /* Footer style */
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 10px 0;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-control:focus {
+            border-color: #1976d2;
+            box-shadow: none;
         }
     </style>
 </head>
@@ -52,12 +44,11 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">Learn English for 11th Grade</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-lg-center">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
@@ -84,25 +75,38 @@
         </div>
     </nav>
 
-    <!-- Main content -->
+    <!-- Contact Section -->
     <div class="hero">
         <div class="container mt-5">
-            <h1 class="text-center mb-4">About Us</h1>
+            <h1 class="text-center mb-4">Contact Us</h1>
             <p class="text-muted text-center">
-                Kami adalah mahasiswa dari Program Studi Pendidikan Komputer angkatan 2022 di Universitas Lambung Mangkurat, Fakultas Keguruan dan Ilmu Pendidikan. Saat ini, kami sedang mengerjakan tugas pembuatan website pembelajaran bahasa Inggris sebagai bagian dari mata kuliah kami. Kami berharap platform ini dapat membantu siswa dalam mempelajari bahasa Inggris dengan cara yang interaktif dan menyenangkan.
+                Have any questions or feedback? Feel free to reach out to us using the form below!
             </p>
-            <p class="text-muted text-center">Welcome to our English learning platform! We provide engaging mini-games and interactive materials to help students learn English with ease. Explore our drag-and-drop games, vocabulary challenges, and conversation simulations.</p>
-            <p class="text-muted text-center">We are committed to making English learning fun and accessible for everyone. Thank you for choosing us as your learning partner!</p>
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+            </div>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+    <footer>
         <p>&copy; 2024 Kucing Team. All rights reserved.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
