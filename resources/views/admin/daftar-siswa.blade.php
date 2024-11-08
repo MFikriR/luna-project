@@ -3,7 +3,7 @@
 @section('content')
 <h1>Daftar Siswa</h1>
 <div class="export-buttons">
-    <a href="{{ route('siswa.export-excel') }}" class="btn btn-success">Export as Excel</a>
+    {{-- <a href="{{ route('siswa.export-excel') }}" class="btn btn-success">Export as Excel</a> --}}
 </div>
 <table class="table">
     <thead>
