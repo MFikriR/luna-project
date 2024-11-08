@@ -686,9 +686,9 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-
-                        
+            </div> 
+            
+            <iframe src="https://scratch.mit.edu/projects/1089955768/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
         </div>
 
 
@@ -725,9 +725,9 @@
             <h3>Latihan 2: Isian Singkat</h3>
             <p>Lengkapilah kalimat berikut ini dengan kata yang tepat:</p>
             <ol>
-                <li>John: "I am bored. <input type="text" id="question3" placeholder="__________"> we watch a movie?"</li>
-                <li>Jane: "<input type="text" id="question4" placeholder="__________"> we have lunch together this afternoon?"</li>
-                <li>Siti: "How <input type="text" id="question5" placeholder="__________"> taking a walk in the park?"</li>
+                <li>John: "I am bored. <input type="text" id="question3" placeholder=""> we watch a movie?"</li>
+                <li>Jane: "<input type="text" id="question4" placeholder=""> we have lunch together this afternoon?"</li>
+                <li>Siti: "How <input type="text" id="question5" placeholder=""> taking a walk in the park?"</li>
             </ol>
         </div>
         
@@ -787,7 +787,7 @@
                 if (JSON.stringify(selectedCheckboxes.sort()) === JSON.stringify(correctAnswers.question8.sort())) score++;
         
                 // Tampilkan hasil
-                document.getElementById("result").innerText = `Skor Anda: ${score} dari ${totalQuestions}`;
+                document.getElementById("result").innerText = Skor Anda: ${score} dari ${totalQuestions};
             }
         </script>
         
