@@ -99,6 +99,7 @@ Route::get('/mini-games/percakapan', function () {
     return view('games.percakapan'); // Mengarah ke view percakapan.blade.php
 })->name('percakapan_game');
 
+// --------------------------------------------------------------------------------------------------------------------------------------------//
 // ADMIN (Do not change the route name)
 // Rute untuk menampilkan form login admin
 Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
@@ -117,10 +118,17 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
 
 // Daftar Siswa
 Route::get('/admin/daftar-siswa', [UserController::class, 'index'])->name('admin.daftar-siswa');
+
+// Tambah Siswa
+Route::get('/admin/tambah-siswa', [UserController::class, 'create'])->name('admin.tambah-siswa');
+Route::post('/admin/tambah-siswa', [UserController::class, 'store'])->name('admin.simpan-siswa');
+
+
+// Edit Siswa
 Route::get('/siswa/{id}/edit', [UserController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{id}', [UserController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{id}', [UserController::class, 'destroy'])->name('siswa.destroy');
-// ----------------------------------------------------------------------------------------------------------- //
+// ------------------------------------------------------------------------------------------------------------------------------------------ //
 
 // Routes yang membutuhkan autentikasi
 Route::middleware(['auth'])->group(function () {

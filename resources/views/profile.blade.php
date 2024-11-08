@@ -49,7 +49,7 @@
             <h1>Profil Pengguna</h1>
             <div class="profile-info">
                 <!-- Menampilkan Foto Profil -->
-                <img src="{{ asset('images/profiles/' . $user->foto_profil) }}" alt="Foto Profil">
+                <img src="{{ asset('images/profiles/' . ($user->foto_profil ?? 'default.jpg')) }}" alt="Foto Profil" width="100">
 
                 <!-- Menampilkan Nama -->
                 <p><strong>Nama:</strong> {{ $user->name }}</p>

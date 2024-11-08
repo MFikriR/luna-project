@@ -2,6 +2,9 @@
 
 @section('content')
 <h1>Daftar Siswa</h1>
+<div class="export-buttons">
+    <a href="{{ route('siswa.export-excel') }}" class="btn btn-success">Export as Excel</a>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -23,7 +26,7 @@
             <td>{{ $s->jenis_kelamin }}</td>
             <td>
                 @if($s->foto_profil)
-                    <img src="{{ asset('storage/'.$s->foto_profil) }}" alt="Foto Profil" width="50" height="50">
+                    <img src="{{ asset('images/profiles/' . ($s->foto_profil ?? 'default.png')) }}" alt="Foto Profil" width="100">
                 @else
                     Tidak ada
                 @endif
@@ -34,7 +37,7 @@
                 <form action="{{ route('siswa.destroy', $s->id) }}" method="POST" style="display:inline;">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus siswa ini?')">Hapus</button>
+                    <button class="btn btn-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus siswa ini?')">Hapus</button>
                 </form>
             </td>
         </tr>
