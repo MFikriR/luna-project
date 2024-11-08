@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MateriController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\LatihanController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;

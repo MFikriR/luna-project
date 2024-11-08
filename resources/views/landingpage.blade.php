@@ -48,11 +48,12 @@
         }
 
         .navbar-nav .nav-link {
-        margin-right: 15px; /* Tambahkan jarak antar item navbar */
-        padding: 8px 15px; /* Sesuaikan padding untuk membuat jarak di dalam item */
-        color: #000;
-    }
+            margin-right: 15px; /* Tambahkan jarak antar item navbar */
+            padding: 8px 15px; /* Sesuaikan padding untuk membuat jarak di dalam item */
+            color: #000;
+        }
 
+        
 
     </style>
 </head>
@@ -69,7 +70,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#home">Home</a>
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('lihatMateri') }}">Materi</a>
@@ -78,7 +79,7 @@
                         <a class="nav-link" href="#capaian">Capaian Pembelajaran</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="{{ route('about') }}">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
