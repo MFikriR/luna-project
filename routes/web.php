@@ -20,11 +20,6 @@ use App\Http\Controllers\DragAndDropController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Static
 
 Route::get('/', [LandingPageController::class, 'index']);
@@ -34,6 +29,10 @@ Route::get('/drag-and-drop', [DragAndDropController::class, 'index'])->name('dra
 Route::get('/video-tutorials', [TutorialController::class, 'showVideoTutorials'])->name('video-tutorials');
 
 Route::get('/materi', [DashboardController::class,'viewMateri'])->name('materi');
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
 Route::get('/chapter1', function () {
     return view('chapter1');
