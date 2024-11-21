@@ -119,6 +119,103 @@
             margin-bottom: 20px;
             padding-left: 20px;
         }
+
+        .example-box {
+            background-color: #e0e0e0;
+            border-left: 6px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .example-box code {
+            font-family: monospace;
+            background-color: #e0e0e0;
+            padding: 2px 5px;
+        }
+        .btn-next {
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            display: inline-block;
+        }
+        .btn-next:hover {
+            background-color: #45a049;
+            color: white;
+        }
+        .breadcrumb {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .chat-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            flex-grow: 1;
+            margin: 0 20px;
+        }
+        .chat-row {
+            display: flex;
+            align-items: flex-start;
+        }
+        .chat-bubble {
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 60%;
+            position: relative;
+            font-size: 16px;
+        }
+        .left {
+            background-color: #d9edf7;
+            margin-right: auto;
+            display: flex;
+            align-items: center;
+        }
+        .right {
+            background-color: #fce5cd;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .left-bubble {
+            order: 1;
+        }
+        .right-bubble {
+            order: 0;
+        }
+        /* Left triangle (A's bubble) */
+        .chat-bubble.left::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            top: 15px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent #d9edf7 transparent transparent;
+        }
+        /* Right triangle (B's bubble) */
+        .chat-bubble.right::before {
+            content: "";
+            position: absolute;
+            right: -10px;
+            top: 15px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: transparent transparent transparent #fce5cd;
+        }
+       /* Image styling with increased size */
+        .person-left, .person-right {
+            width: 150px; /* Ganti ukuran sesuai kebutuhan */
+            height: auto;
+        }
     </style>
 </head>
 
@@ -146,19 +243,89 @@
         <div class="sidebar" id="sidebar">
             <div class="materi-title">Materi Pembelajaran</div>
             <div class="nav flex-column">
-                <a href="#" class="nav-link"><i class="fas fa-book"></i> Chapter 1</a>
-                <a href="#" class="nav-link"><i class="fas fa-folder-open"></i> Chapter 2</a>
-                <a href="#" class="nav-link"><i class="fas fa-tasks"></i> Chapter 3</a>
-                <a href="#" class="nav-link"><i class="fas fa-users"></i> Chapter 4</a>
-                <a href="#" class="nav-link"><i class="fas fa-user"></i> Chapter 5</a>
+
+                <!-- Chapter 1 with dropdown -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    data-bs-toggle="collapse" data-bs-target="#chapter1Content" aria-expanded="false">
+                        <span><i class="fas fa-book"></i> Chapter 1</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="chapter1Content">
+                        <div class="nav flex-column ms-3">
+                            <a href="#" class="nav-link">Suggestions</a>
+                            <a href="#" class="nav-link">Offers</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 2 -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    data-bs-toggle="collapse" data-bs-target="#chapter2Content" aria-expanded="false">
+                        <span><i class="fas fa-book"></i> Chapter 2</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="chapter2Content">
+                        <div class="nav flex-column ms-3">
+                            <a href="#" class="nav-link">Opinions</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 3 -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    data-bs-toggle="collapse" data-bs-target="#chapter3Content" aria-expanded="false">
+                        <span><i class="fas fa-book"></i> Chapter 3</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="chapter3Content">
+                        <div class="nav flex-column ms-3">
+                            <a href="#" class="nav-link">...</a>
+                            <a href="#" class="nav-link">...</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 4 -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    data-bs-toggle="collapse" data-bs-target="#chapter4Content" aria-expanded="false">
+                        <span><i class="fas fa-book"></i> Chapter 4</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="chapter4Content">
+                        <div class="nav flex-column ms-3">
+                            <a href="#" class="nav-link">...</a>
+                            <a href="#" class="nav-link">...</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 5 -->
+                <div class="nav-item">
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    data-bs-toggle="collapse" data-bs-target="#chapter5Content" aria-expanded="false">
+                        <span><i class="fas fa-book"></i> Chapter 5</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="collapse" id="chapter5Content">
+                        <div class="nav flex-column ms-3">
+                            <a href="#" class="nav-link">...</a>
+                            <a href="#" class="nav-link">...</a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
+
 
         <!-- Main Content -->
         <div class="main-content" id="main-content">
             <div class="content-area">
-                <h1>Selamat Datang di Dashboard Materi</h1>
-                <p>Konten utama akan ditampilkan di sini.</p>
+                @yield('content') <!-- Tempat konten halaman child -->
             </div>
         </div>
     </div>

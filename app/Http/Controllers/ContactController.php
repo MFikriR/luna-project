@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
-    public function showContactForm()
+    public function index()
     {
-        return view('contact');
+        return view('contact'); // Pastikan Anda memiliki file `contact.blade.php` di folder `resources/views`
     }
 }

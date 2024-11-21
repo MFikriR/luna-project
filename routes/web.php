@@ -152,3 +152,5 @@ Route::get('/percakapan-game', [GameController::class, 'showPercakapanGame'])->n
 
 
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
