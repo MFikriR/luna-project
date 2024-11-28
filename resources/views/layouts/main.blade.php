@@ -13,71 +13,74 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <style>
-        body{
-            background-color:#47B5FF;
+        body {
+            background-color: #CCE1EB; /* Warna lebih terang untuk latar */
             font-family: 'Poppins', sans-serif;
         }
+    
         /* Sidebar style */
         #sidebar {
             width: 250px;
+            background-color: #B4C8C8; /* Warna sidebar */
+            color: #54868B; /* Warna teks sidebar */
             transition: all 0.3s;
-            
         }
-
+    
         #sidebar.active {
             width: 0;
             overflow: hidden;
         }
-
+    
         /* Main content style */
         .main-content {
             width: calc(100% - 250px);
             transition: all 0.3s;
         }
-
+    
         .main-content.active {
             width: 100%;
         }
-
+    
         /* Gaya untuk sidebar menu */
         #sidebar ul.components {
             padding: 0;
             margin: 0;
             list-style: none;
         }
-
+    
         #sidebar ul li {
             margin: 0;
             padding: 0;
             text-align: center;
         }
-
+    
         #sidebar ul li a {
             display: block;
             padding: 15px;
             margin: 5px;
             font-size: 16px;
-            color: #333;
-            background-color: #f8f9fa;
+            color: #54868B; /* Warna teks menu */
+            background-color: #D3E3EB; /* Warna latar menu */
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
             text-align: left;
         }
-
+    
         /* Hover effect */
         #sidebar ul li a:hover {
-            background-color: #007bff;
-            color: white;
+            background-color: #97C5D3; /* Warna hover menu */
+            color: #CCE1EB; /* Warna teks saat hover */
         }
-
+    
         .footer {
-            background-color:#333;
+            background-color: #54868B; /* Warna footer lebih gelap */
             padding: 10px 0;
-            color:azure;
+            color: #D3E3EB; /* Warna teks footer */
             text-align: center;
         }
     </style>
+    
 </head>
 
 <body>

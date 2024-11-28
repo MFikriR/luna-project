@@ -9,7 +9,14 @@
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <style>
+       body {
+        font-family: 'Open Sans', sans-serif; /* Font utama */
+       }
+
         .hero {
             background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
             color: #333;
@@ -37,6 +44,8 @@
         }
         .navbar-nav .nav-link {
             color: #000;
+            font-weight: 700;
+            font-style: italic;
         }
         .navbar-nav .nav-link:hover {
             color: #007bff;
@@ -87,9 +96,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link btn btn-primary text-white" href="{{ route('register') }}">Register</a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

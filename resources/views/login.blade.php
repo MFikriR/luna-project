@@ -9,50 +9,87 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
+        body {
+            background-color: #CCE1EB; /* Warna latar belakang utama */
+            font-family: 'Poppins', sans-serif;
+        }
+
         .container {
-            max-width: 600px;
-            margin-top: 50px;
+            max-width: 1000px;
+            margin: 50px auto;
         }
 
-        .left-box {
-            background: #103cbe;
-            padding: 30px;
+        .left-side {
+            background-color: #54868B; /* Warna latar kiri */
             color: white;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            padding: 30px;
+            text-align: center;
         }
 
-        .right-box {
-            padding: 30px;
+        .left-side h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .left-side p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .right-side {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .right-side h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #54868B;
+        }
+
+        .form-control {
+            border-radius: 15px;
+            background-color: #D3E3EB;
+        }
+
+        .btn-primary {
+            background-color: #54868B;
+            border: none;
+            border-radius: 15px;
+            font-size: 1rem;
+            padding: 10px 20px;
+        }
+
+        .btn-primary:hover {
+            background-color: #97C5D3;
+        }
+
+        a {
+            color: #54868B;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
-<body style="background-color: #47B5FF">
-    @if (session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endif
-
-    <!-- Main Container -->
-    <div class="container d-flex justify-content-center align-items-center pt-4">
-
-        <!-- Login Container -->
-        <div class="row border rounded-5 p-3 bg-white shadow box-area w-100">
-
-            <!-- Left Box -->
-            <div class="col-md-5 rounded-4 d-flex justify-content-center align-items-center flex-column left-box">
-                <div class="featured-image mb-3">
-                    <img src="{{ asset('img/orang belajar.png') }}" class="img-fluid" style="width: 200px;">
-                </div>
-                <p class="fs-3">Selamat Datang</p>
-                <small class="text-white text-center">Silahkan login sebagai Siswa</small>
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="row w-100 shadow rounded-4 overflow-hidden">
+            <!-- Left Side -->
+            <div class="col-md-6 left-side">
+                <h1>Pembelajaran Bahasa Inggris</h1>
+                <p>Bahasa Inggris SMA Kelas XI</p>
+                <img src="{{ asset('img/orang belajar.png') }}" alt="Ilustrasi" class="img-fluid" style="max-width: 80%;">
             </div>
 
-            <!-- Right Box -->
-            <div class="col-md-7 right-box">
-                <h3 class="mb-4">Login Portal Siswa</h3>
-
-                <!-- Student Login Form -->
+            <!-- Right Side -->
+            <div class="col-md-6 right-side bg-white">
+                <h2>Login Siswa</h2>
                 <form action="{{ route('login.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
@@ -73,21 +110,6 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        const togglePassword = document.getElementById('togglePassword');
-        const passwordInput = document.getElementById('studentPassword');
-
-        togglePassword.addEventListener('click', function() {
-            // Toggle password visibility
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-
-            // Toggle the eye icon
-            this.querySelector('i').classList.toggle('fa-eye-slash');
-        });
-    </script>
 </body>
 
 </html>
