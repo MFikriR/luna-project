@@ -38,6 +38,11 @@ Route::get('/chapter1', function () {
     return view('chapter1');
 })->name('chapter1');
 
+// KI & KD
+Route::get('/kikd', function () {
+    return view('KI&KD');
+})->name('kikd');
+
 
 // Route untuk menampilkan halaman quiz
 Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz');
