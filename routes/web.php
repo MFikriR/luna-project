@@ -38,6 +38,10 @@ Route::get('/chapter1', function () {
     return view('chapter1');
 })->name('chapter1');
 
+Route::get('/chapter2', function () {
+    return view('chapter2');
+})->name('chapter2');
+
 // KI & KD
 Route::get('/kikd', function () {
     return view('KI&KD');

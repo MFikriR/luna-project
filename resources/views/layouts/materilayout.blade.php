@@ -232,7 +232,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a> <!-- Link Home -->
+                            <a class="nav-link active" href="{{route('dashboard')}}">Home</a> <!-- Link Home -->
                         </li>
                     </ul>
                 </div>
@@ -253,8 +253,8 @@
                     </a>
                     <div class="collapse" id="chapter1Content">
                         <div class="nav flex-column ms-3">
-                            <a href="#" class="nav-link">Suggestions</a>
-                            <a href="#" class="nav-link">Offers</a>
+                            <a href="{{route('chapter1')}}" class="nav-link">Suggestions</a>
+                            <a href="{{route('chapter1')}}" class="nav-link">Offers</a>
                         </div>
                     </div>
                 </div>
@@ -268,7 +268,7 @@
                     </a>
                     <div class="collapse" id="chapter2Content">
                         <div class="nav flex-column ms-3">
-                            <a href="#" class="nav-link">Opinions</a>
+                            <a href="{{route('chapter2')}}" class="nav-link">Opinions</a>
                         </div>
                     </div>
                 </div>

@@ -53,7 +53,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Bab 1: Offers & Suggestions</h5>
                     <p class="card-text">Pelajari cara memberikan penawaran dan saran dalam Bahasa Inggris.</p>
-                    <a href="{{ route('bab1') }}" class="btn btn-primary">Pilih Bab 1</a>
+                    <a href="{{ route('chapter1') }}" class="btn btn-primary">Pilih Bab 1</a>
                 </div>
             </div>
 
@@ -63,7 +63,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Bab 2: Opinions & Thoughts</h5>
                     <p class="card-text">Pelajari cara mengungkapkan pendapat dan pemikiran dalam Bahasa Inggris.</p>
-                    <a href="{{ route('bab2') }}" class="btn btn-primary">Pilih Bab 2</a>
+                    <a href="{{ route('chapter2') }}" class="btn btn-primary">Pilih Bab 2</a>
                 </div>
             </div>
 
@@ -73,7 +73,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Bab 3: Party Time</h5>
                     <p class="card-text">Pelajari ungkapan-ungkapan yang digunakan saat mengadakan atau menghadiri pesta.</p>
-                    <a href="{{ route('bab3') }}" class="btn btn-primary">Pilih Bab 3</a>
+                    <a href="#" class="btn btn-primary">Pilih Bab 3</a>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Bab 4: National Disaster - An Exposition</h5>
                     <p class="card-text">Pelajari tentang bencana alam nasional dan cara menyajikan eksposisi terkait topik ini.</p>
-                    <a href="{{ route('bab4') }}" class="btn btn-primary">Pilih Bab 4</a>
+                    <a href="#" class="btn btn-primary">Pilih Bab 4</a>
                 </div>
             </div>
 
@@ -93,7 +93,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Bab 5: Letter Writing</h5>
                     <p class="card-text">Pelajari cara menulis surat dalam berbagai konteks resmi dan tidak resmi.</p>
-                    <a href="{{ route('bab5') }}" class="btn btn-primary">Pilih Bab 5</a>
+                    <a href="#" class="btn btn-primary">Pilih Bab 5</a>
                 </div>
             </div>
         </div>
