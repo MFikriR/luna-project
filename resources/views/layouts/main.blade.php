@@ -92,7 +92,7 @@
             </div>
             <ul class="list-unstyled components">
                 <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                <li><a href="materi">Materi</a></li>
+                <li><a href="{{ route('bab1.page', ['page' => 1]) }}">Materi</a></li>
                 <li><a href="{{ route('mini-games') }}">Mini Games</a></li>
                 <li><a href="{{ route('forum') }}">Forum</a></li>
             </ul>

@@ -590,7 +590,6 @@
 
 <p id="result"></p>
 
-
 <script>
     function checkAnswers() {
         // Jawaban benar
@@ -638,13 +637,10 @@
 </div>
 
 <div class="pagination">
-    <a href="#" class="btn">Back</a>
-    <a href="#" class="btn">1</a>
-    <a href="#" class="btn">2</a>
-    <a href="#" class="btn">3</a>
-    <a href="#" class="btn">Next</a>
+    <a href="#" class="btn btn-back">Back</a>
+    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn active">1</a>
+    <a href="{{ route('bab1.page', ['page' => 2]) }}" class="btn">2</a>
+    <a href="{{ route('bab1.page', ['page' => 3]) }}" class="btn">3</a>
+    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn btn-back">Next</a>
 </div>
-
-
-
 @endsection

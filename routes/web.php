@@ -163,3 +163,17 @@ Route::get('/percakapan-game', [GameController::class, 'showPercakapanGame'])->n
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+
+Route::get('/bab1/page/{page}', [MateriController::class, 'bab1'])->name('bab1.page');
+Route::get('/bab1/page1', function () {
+    return view('bab1.page1');
+});
+
+Route::get('/bab1/page2', function () {
+    return view('bab1.page2');
+});
+
+Route::get('/bab1/page3', function () {
+    return view('bab1.page3');
+});
