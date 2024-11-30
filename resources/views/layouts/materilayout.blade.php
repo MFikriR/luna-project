@@ -26,7 +26,7 @@
         /* Navbar Styling */
         .navbar {
             background-color: #007bff; /* Navbar berwarna biru */
-            padding: 10px 20px;
+            padding: 5px 20px;
             color: white;
             position: fixed;
             top: 0;
@@ -85,7 +85,7 @@
         .main-content {
             flex-grow: 1;
             margin-left: 250px;
-            margin-top: 60px; /* Memberi jarak antara navbar dan konten */
+            margin-top: 40px; /* Memberi jarak antara navbar dan konten */
             padding: 20px;
             transition: margin-left 0.3s ease;
         }
@@ -216,6 +216,82 @@
             width: 150px; /* Ganti ukuran sesuai kebutuhan */
             height: auto;
         }
+
+        /* Label */
+        .scroll-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        /* Kotak dengan scroll */
+        .scroll-box {
+            background-color: #ffffff; /* Warna latar putih */
+            border: 1px solid #ccc; /* Garis tepi */
+            padding: 10px; /* Padding di dalam kotak */
+            height: 480px; /* Tinggi tetap */
+            overflow-y: auto; /* Tambahkan scroll secara vertikal */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk tampilan */
+        }
+
+        /* Gaya untuk pagination */
+        .pagination {
+            display: flex;
+            gap: 8px; /* Jarak antar tombol */
+            justify-content: center; /* Letakkan pagination di tengah */
+            align-items: center;
+            margin-top: 5px; /* Memberi jarak dari konten atas */
+            padding: 10px;
+            background-color: #fff; /* Warna latar belakang pagination */
+            border-radius: 12px; /* Rounded border untuk seluruh pagination */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk tampilan */
+            border: 1px solid #ddd; /* Tambahkan border */
+        }
+
+        /* Gaya untuk tombol */
+        .pagination .btn {
+            display: inline-block;
+            padding: 5px 10px; /* Ukuran tombol */
+            background-color: #007bff; /* Warna background */
+            color: #fff; /* Warna teks */
+            text-decoration: none; /* Hilangkan garis bawah */
+            border-radius: 6px; /* Rounded border tombol */
+            font-size: 13px; /* Ukuran font */
+            font-weight: 250; /* Tebal font */
+            text-align: center;
+            transition: all 0.3s ease; /* Animasi hover */
+            border: 1px solid #0056b3; /* Warna border */
+        }
+
+        /* Efek hover pada tombol */
+        .pagination .btn:hover {
+            background-color: #0056b3; /* Warna saat hover */
+            color: #fff; /* Warna teks saat hover */
+            transform: scale(1.05); /* Efek zoom sedikit */
+        }
+
+        /* Tombol aktif */
+        .pagination .btn.active {
+            background-color: #0056b3; /* Warna khusus tombol aktif */
+            color: white;
+            pointer-events: none; /* Nonaktifkan klik */
+            border: 1px solid #003e7f;
+        }
+
+        /* Tombol tambahan: Back dan Next */
+        .pagination .btn-back, .pagination .btn-next {
+            font-weight: bold;
+            font-size: 14px;
+            background-color: #6c757d; /* Warna tombol tambahan */
+            border: 1px solid #5a6268; /* Warna border tombol tambahan */
+        }
+
+        .pagination .btn-back:hover, .pagination .btn-next:hover {
+            background-color: #5a6268; /* Warna saat hover tombol tambahan */
+        }
+
+
     </style>
 </head>
 

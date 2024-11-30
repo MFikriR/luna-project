@@ -3,7 +3,10 @@
 @section('title', 'Bab 1: Offers & Suggestions')
 
 @section('content')
-<h1 id="intro">Bab 1: Offers & Suggestion</h1>
+
+<div class="container">
+    <div id="scroll-box" class="scroll-box">
+        <h1 id="intro">Bab 1: Offers & Suggestion</h1>
 <p>Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi dalam bahasa Inggris.</p>
 
 <h2>A: Pre-Activity</h2>
@@ -587,6 +590,7 @@
 
 <p id="result"></p>
 
+
 <script>
     function checkAnswers() {
         // Jawaban benar
@@ -630,4 +634,17 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
+</div>
+
+<div class="pagination">
+    <a href="#" class="btn">Back</a>
+    <a href="#" class="btn">1</a>
+    <a href="#" class="btn">2</a>
+    <a href="#" class="btn">3</a>
+    <a href="#" class="btn">Next</a>
+</div>
+
+
+
 @endsection
