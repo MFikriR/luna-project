@@ -23,7 +23,7 @@ class LoginController extends Controller
 
         // Cek login
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('dashboard')->with('success', 'Selamat datang!');
+            return redirect()->intended('home')->with('success', 'Selamat datang!');
         }
 
         return back()->withErrors([
@@ -37,3 +37,4 @@ class LoginController extends Controller
         return redirect()->route('login')->with('success', 'Anda telah logout.');
     }
 }
+// itu btambah
