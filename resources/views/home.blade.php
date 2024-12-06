@@ -101,19 +101,23 @@
     <h1>Media Pembelajaran Bahasa Inggris Kelas XI</h1>
 
     <div class="button-container">
-        <button class="button">
+        <!-- KI/KD Button -->
+        <button class="button" onclick="window.location.href='{{ route('ki-kd') }}'">
             <img src="/gif/books.gif" alt="KI/KD">
             <span>KI/KD</span>
         </button>
-        <button class="button">
+        <!-- Materi Button -->
+        <button class="button" onclick="window.location.href='{{ route('bab1.page', ['page' => 1]) }}'">
             <img src="/gif/book.gif" alt="Materi">
             <span>Materi</span>
         </button>
-        <button class="button">
+        <!-- Informasi Button -->
+        <button class="button" onclick="window.location.href='{{ route('about') }}'">
             <img src="/gif/open-book (1).gif" alt="Informasi">
             <span>Informasi</span>
         </button>
     </div>
+    
 
     <footer>
         &copy; 2023 Media Pembelajaran. Semua hak dilindungi.

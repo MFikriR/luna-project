@@ -177,3 +177,7 @@ Route::get('/bab1/page2', function () {
 Route::get('/bab1/page3', function () {
     return view('bab1.page3');
 });
+
+Route::get('/ki-kd', function () {
+    return view('ki&kd');
+})->name('ki-kd');

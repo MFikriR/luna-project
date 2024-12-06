@@ -1,84 +1,141 @@
-@extends('layouts.main')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('title', 'Forum')
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning Forum</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <style>
+        /* Root Colors */
+        :root {
+            --color-light-blue: #D3E3EB;
+            --color-sky-blue: #97C5D3;
+            --color-muted-blue: #B4C8C8;
+            --color-dark-teal: #54868B;
+            --color-pastel-blue: #CCE1EB;
+            --color-primary: #007bff;
+        }
+
+        /* Page Background */
         body {
-            background-color: #47B5FF;
+            background: url('/img/forum-bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Container */
         .container {
+            margin-top: 120px;
             max-width: 900px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
+            background-color: var(--color-white-bg);
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-            transition: margin-left 0.3s ease, width 0.3s ease;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .container.active {
-            margin-left: 270px;
-            width: calc(100% - 250px);
-        }
-
-        h1 {
+        /* Content Styling */
+        .content h1 {
+            color: var(--color-dark-teal);
+            font-size: 28px;
+            font-weight: bold;
             text-align: center;
-            color: #3498db;
+            margin-bottom: 20px;
         }
 
         .forum-list {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
 
         .forum-list li {
-            border-bottom: 1px solid #ddd;
-            padding: 15px 0;
+            border: 1px solid var(--color-muted-blue);
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: var(--color-light-blue);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .forum-list li:last-child {
-            border-bottom: none;
+        .forum-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .forum-list li a {
+        .forum-list a {
             text-decoration: none;
-            font-size: 18px;
-            color: #3498db;
+            color: var(--color-dark-teal);
+            font-size: 20px;
+            font-weight: bold;
+            display: block;
         }
 
-        .forum-list li a:hover {
-            color: #2980b9;
+        .forum-list .forum-description {
+            color: black(--color-muted-blue);
+            font-size: 16px;
+            margin-top: 8px;
         }
 
-        .forum-description {
-            font-size: 14px;
-            color: #777;
-            margin-top: 5px;
+        /* Navbar */
+        .navbar {
+            background-color: var(--color-primary);
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
-
-        /* Content styles */
-        .content {
-            transition: margin-left 0.3s ease, width 0.3s ease;
-            margin-left: 0px;
-            width: 100%;
+        .navbar .navbar-brand {
+            color: white;
+            font-size: 24px;
         }
 
-        .content.active {
-            margin-left: 0px; /* Geser konten ke kanan sebesar lebar sidebar */
-            width: calc(100% - 0px); /* Sesuaikan lebar konten */
+        .navbar .nav-link {
+            color: white !important;
+            margin-left: 10px;
         }
 
+        .navbar .nav-link:hover {
+            color: var(--color-sky-blue) !important;
+        }
     </style>
 </head>
+
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ route('home') }}">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('mini-games') }}">Mini Games</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('forum') }}">Forum</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        
+
         <!-- Konten -->
         <div class="content">
-
             <h1>English Learning Forum: Introduction and Self-Description</h1>
             <ul class="forum-list">
                 @foreach ($topics as $topic)
@@ -91,6 +148,8 @@
         </div>
     </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
-@endsection

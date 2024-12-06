@@ -309,7 +309,17 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" href="{{route('dashboard')}}">Home</a> <!-- Link Home -->
+                            <a class="nav-link active" href="{{route('home')}}">Home</a> <!-- Link Home -->
+                        </li>
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('mini-games') }}">Mini Games</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="{{ route('forum') }}">Forum</a>
                         </li>
                     </ul>
                 </div>
@@ -364,37 +374,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Chapter 4 -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
-                    data-bs-toggle="collapse" data-bs-target="#chapter4Content" aria-expanded="false">
-                        <span><i class="fas fa-book"></i> Chapter 4</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <div class="collapse" id="chapter4Content">
-                        <div class="nav flex-column ms-3">
-                            <a href="#" class="nav-link">...</a>
-                            <a href="#" class="nav-link">...</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Chapter 5 -->
-                <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
-                    data-bs-toggle="collapse" data-bs-target="#chapter5Content" aria-expanded="false">
-                        <span><i class="fas fa-book"></i> Chapter 5</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </a>
-                    <div class="collapse" id="chapter5Content">
-                        <div class="nav flex-column ms-3">
-                            <a href="#" class="nav-link">...</a>
-                            <a href="#" class="nav-link">...</a>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
         </div>
 
