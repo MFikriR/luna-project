@@ -42,6 +42,10 @@ Route::get('/chapter2', function () {
     return view('chapter2');
 })->name('chapter2');
 
+Route::get('/chapter3', function () {
+    return view('chapter3');
+})->name('chapter3');
+
 // KI & KD
 Route::get('/kikd', function () {
     return view('KI&KD');
@@ -181,3 +185,8 @@ Route::get('/bab1/page3', function () {
 Route::get('/ki-kd', function () {
     return view('ki&kd');
 })->name('ki-kd');
+
+Route::get('/bab2/page/{page}', [MateriController::class, 'bab2'])->name('bab2.page');
+Route::get('/bab2/page1', function () {
+    return view('bab2.page1');
+});

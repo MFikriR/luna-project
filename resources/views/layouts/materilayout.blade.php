@@ -291,6 +291,11 @@
             background-color: #5a6268; /* Warna saat hover tombol tambahan */
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+
 
 
     </style>
@@ -340,8 +345,8 @@
                     </a>
                     <div class="collapse" id="chapter1Content">
                         <div class="nav flex-column ms-3">
-                            <a href="{{route('chapter1')}}" class="nav-link">Suggestions</a>
-                            <a href="{{route('chapter1')}}" class="nav-link">Offers</a>
+                            <a href="{{ route('bab1.page', ['page' => 1]) }}" class="nav-link">Suggestions</a>
+                            <a href="{{ route('bab1.page', ['page' => 2]) }}#offers" class="nav-link">Offers</a>
                         </div>
                     </div>
                 </div>
@@ -355,7 +360,7 @@
                     </a>
                     <div class="collapse" id="chapter2Content">
                         <div class="nav flex-column ms-3">
-                            <a href="{{route('chapter2')}}" class="nav-link">Opinions</a>
+                            <a href="{{ route('bab2.page', ['page' => 1]) }}" class="nav-link">Opinions</a>
                         </div>
                     </div>
                 </div>
