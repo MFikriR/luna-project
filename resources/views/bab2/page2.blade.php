@@ -254,11 +254,11 @@
 </div>
 
 <div class="pagination">
-    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn btn-back">Back</a>
-    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn">1</a>
-    <a href="{{ route('bab1.page', ['page' => 2]) }}" class="btn active">2</a>
-    <a href="{{ route('bab1.page', ['page' => 3]) }}" class="btn">3</a>
-    <a href="{{ route('bab1.page', ['page' => 3]) }}" class="btn btn-back">Next</a>
+    <a href="{{ route('bab2.page', ['page' => 1]) }}" class="btn btn-back">Back</a>
+    <a href="{{ route('bab2.page', ['page' => 1]) }}" class="btn">1</a>
+    <a href="{{ route('bab2.page', ['page' => 2]) }}" class="btn active">2</a>
+    <a href="{{ route('bab2.page', ['page' => 3]) }}" class="btn">3</a>
+    <a href="{{ route('bab2.page', ['page' => 3]) }}" class="btn btn-back">Next</a>
 </div>
 
 @endsection

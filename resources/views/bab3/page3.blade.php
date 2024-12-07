@@ -9,10 +9,9 @@
 </div>
 
 <div class="pagination">
-    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn active">1</a>
+    <a href="{{ route('bab1.page', ['page' => 2]) }}" class="btn btn-back">Back</a>
+    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn">1</a>
     <a href="{{ route('bab1.page', ['page' => 2]) }}" class="btn">2</a>
-    <a href="{{ route('bab1.page', ['page' => 3]) }}" class="btn">3</a>
-    <a href="{{ route('bab1.page', ['page' => 2]) }}" class="btn btn-back">Next</a>
-</div>
+    <a href="{{ route('bab1.page', ['page' => 3]) }}" class="btn active">3</a></div>
 
 @endsection

@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="container">
-    <div id="scroll-box" class="scroll-box"
-    <h2>H: Latihan Soal</h2>
+    <div id="scroll-box" class="scroll-box">
+        <h2>H: Latihan Soal</h2>
             <div class="example-box">
                 <h3>Latihan 1: Pilihan Ganda</h3>
                 <p>Pilihlah jawaban yang benar untuk melengkapi kalimat di bawah ini.</p>
@@ -102,26 +102,16 @@
                 }
             </script>
 
-
-
-            <!-- Navigation buttons (Back & Next) -->
-            <div class="d-flex justify-content-between mt-4">
-                <a href="{{ route('bab1') }}" class="btn btn-secondary">Kembali ke Bab Sebelumnya</a>
-                <a href="{{ route('bab3') }}" class="btn-next">Next: Bab 3 - Daily Activities</a>
-            </div>
-        </div>
-
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </div>
 
 <div class="pagination">
-    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn btn-back">Back</a>
-    <a href="{{ route('bab1.page', ['page' => 1]) }}" class="btn">1</a>
-    <a href="{{ route('bab1.page', ['page' => 2]) }}" class="btn active">2</a>
-    <a href="{{ route('bab1.page', ['page' => 3]) }}" class="btn">3</a>
-    <a href="{{ route('bab1.page', ['page' => 3]) }}" class="btn btn-back">Next</a>
+    <a href="{{ route('bab2.page', ['page' => 2]) }}" class="btn btn-back">Back</a>
+    <a href="{{ route('bab2.page', ['page' => 1]) }}" class="btn">1</a>
+    <a href="{{ route('bab2.page', ['page' => 2]) }}" class="btn">2</a>
+    <a href="{{ route('bab2.page', ['page' => 3]) }}" class="btn active">3</a>
 </div>
 
 @endsection
