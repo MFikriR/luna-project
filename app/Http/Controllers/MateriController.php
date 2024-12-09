@@ -38,4 +38,20 @@ class MateriController extends Controller
         return view($pages[$page]);
     }
 
+    public function bab3($page)
+    
+    {
+        $pages = [
+            1 => 'bab3.page1',
+            2 => 'bab3.page2',
+            3 => 'bab3.page3'
+        ];
+
+        if (!array_key_exists($page, $pages)) {
+            abort(404);
+        }
+
+        return view($pages[$page]);
+    }
+
 }

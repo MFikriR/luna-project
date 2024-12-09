@@ -6,7 +6,7 @@
     <div id="scroll-box" class="scroll-box">
         <!-- Bab 2: Self-Description -->
         <h2 style="color: #000">Bab 2: Opinions & Thoughts</h2>
-        <p>memberi dan meminta informasi terkait pendapat dan pikiran, sesuai dengan konteks penggunaannya.</p>
+        <p>Membedakan fungsi sosial, struktur teks, dan unsur kebahasaan beberapa teks khusus dalam bentuk undangan resmi dengan memberi dan meminta informasi terkait kegiatan sekolah/tempat kerja sesuai dengan konteks penggunaannya.</p>
         
         <h2>A: Pre-Activity</h2>
         <h3>Conversation 1</h3>

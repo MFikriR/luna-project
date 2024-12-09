@@ -190,3 +190,8 @@ Route::get('/bab2/page/{page}', [MateriController::class, 'bab2'])->name('bab2.p
 Route::get('/bab2/page1', function () {
     return view('bab2.page1');
 });
+
+Route::get('/bab3/page/{page}', [MateriController::class, 'bab3'])->name('bab3.page');
+Route::get('/bab3/page1', function () {
+    return view('bab3.page1');
+});

@@ -295,6 +295,55 @@
             scroll-behavior: smooth;
         }
 
+        .rotate {
+        transform: rotate(180deg);
+        transition: transform 0.3s ease;
+        }
+
+        .building-blocks {
+            background-color: #fff8dc;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .types-of-invitations {
+            /* display: flex; */
+            /* justify-content: space-between; */
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .types-of-invitations .badge {
+            background-color: #ffc107;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .formal-invitation,
+        .common-format {
+            background-color: #e8f4fc;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        ul {
+            margin-left: 20px;
+        }
+
+        .rounded-img {
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+        max-width: 100%;
+        height: auto;
+        }
 
 
 
@@ -338,10 +387,10 @@
 
                 <!-- Chapter 1 with dropdown -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon" 
                     data-bs-toggle="collapse" data-bs-target="#chapter1Content" aria-expanded="false">
                         <span><i class="fas fa-book"></i> Chapter 1</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down chevron-icon"></i>
                     </a>
                     <div class="collapse" id="chapter1Content">
                         <div class="nav flex-column ms-3">
@@ -353,10 +402,10 @@
 
                 <!-- Chapter 2 -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon" 
                     data-bs-toggle="collapse" data-bs-target="#chapter2Content" aria-expanded="false">
                         <span><i class="fas fa-book"></i> Chapter 2</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down chevron-icon"></i>
                     </a>
                     <div class="collapse" id="chapter2Content">
                         <div class="nav flex-column ms-3">
@@ -367,15 +416,14 @@
 
                 <!-- Chapter 3 -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center" 
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon" 
                     data-bs-toggle="collapse" data-bs-target="#chapter3Content" aria-expanded="false">
                         <span><i class="fas fa-book"></i> Chapter 3</span>
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="fas fa-chevron-down chevron-icon"></i>
                     </a>
                     <div class="collapse" id="chapter3Content">
                         <div class="nav flex-column ms-3">
-                            <a href="#" class="nav-link">...</a>
-                            <a href="#" class="nav-link">...</a>
+                            <a href="{{ route('bab3.page', ['page' => 1]) }}" class="nav-link">Party Time</a>
                         </div>
                     </div>
                 </div>
@@ -400,6 +448,13 @@
         toggleBtn.addEventListener('click', function () {
             sidebar.classList.toggle('active');
         });
+
+        document.querySelectorAll('.toggle-icon').forEach(toggle => {
+        toggle.addEventListener('click', function () {
+            const chevron = this.querySelector('.chevron-icon');
+            chevron.classList.toggle('rotate');
+        });
+    });
     </script>
 </body>
 
