@@ -1,5 +1,5 @@
 @extends('layouts.materilayout')
-@section('title', 'Bab 3: Opinions')
+@section('title', 'Bab 3: Party Time')
 @section('content')
 
 <div class="container">
