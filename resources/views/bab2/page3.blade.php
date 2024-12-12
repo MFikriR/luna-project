@@ -36,9 +36,15 @@
                 <h3>Latihan 2: Isian Singkat</h3>
                 <p>Lengkapilah kalimat berikut ini dengan kata yang tepat:</p>
                 <ol>
-                    <li>John: "________ I understand it, exams can be stressful but also helpful."</li>
-                    <li>Jane: "As far as I am __________, technology has both benefits and drawbacks."</li>
-                    <li>Siti: "I __________ believe that everyone has the right to express their opinion."</li>
+                    <li>John: "________ I understand it, exams can be stressful but also helpful." <br>
+                        <input type="text" id="question3" placeholder="Jawaban Anda">
+                    </li>
+                    <li>Jane: "As far as I am __________, technology has both benefits and drawbacks." <br>
+                        <input type="text" id="question4" placeholder="Jawaban Anda">
+                    </li>
+                    <li>Siti: "I __________ believe that everyone has the right to express their opinion." <br>
+                        <input type="text" id="question5" placeholder="Jawaban Anda">
+                    </li>
                 </ol>
             </div>
 
@@ -46,8 +52,12 @@
                 <h3>Latihan 3: Buat Kalimat</h3>
                 <p>Buatlah kalimat opini atau pendapat berdasarkan situasi yang diberikan:</p>
                 <ol>
-                    <li>Seseorang bertanya tentang pendapat Anda mengenai penggunaan internet di sekolah. <input type="text" id="question6" placeholder="Tuliskan opini Anda"></li>
-                    <li>Teman Anda merasa bahwa membaca buku adalah cara terbaik untuk belajar. Bagaimana pendapat Anda? <input type="text" id="question7" placeholder="Tuliskan opini Anda"></li>
+                    <li>Seseorang bertanya tentang pendapat Anda mengenai penggunaan internet di sekolah. <br>
+                        <input type="text" id="question6" placeholder="Tuliskan opini Anda">
+                    </li>
+                    <li>Teman Anda merasa bahwa membaca buku adalah cara terbaik untuk belajar. Bagaimana pendapat Anda? <br>
+                        <input type="text" id="question7" placeholder="Tuliskan opini Anda">
+                    </li>
                 </ol>
             </div>
 
@@ -77,28 +87,28 @@
                         question5: "strongly",
                         question8: ["a", "c"]
                     };
-                    
+
                     // Pemeriksaan Pilihan Ganda
                     let score = 0;
-                    let totalQuestions = 5;
-                    
+                    let totalQuestions = 6;
+
                     let q1 = document.querySelector('input[name="question1"]:checked');
                     let q2 = document.querySelector('input[name="question2"]:checked');
-                    
+
                     if (q1 && q1.value === correctAnswers.question1) score++;
                     if (q2 && q2.value === correctAnswers.question2) score++;
-                    
+
                     // Pemeriksaan Isian Singkat
-                    if (document.getElementById("question3").value.trim() === correctAnswers.question3) score++;
-                    if (document.getElementById("question4").value.trim() === correctAnswers.question4) score++;
-                    if (document.getElementById("question5").value.trim() === correctAnswers.question5) score++;
+                    if (document.getElementById("question3").value.trim().toLowerCase() === correctAnswers.question3.toLowerCase()) score++;
+                    if (document.getElementById("question4").value.trim().toLowerCase() === correctAnswers.question4.toLowerCase()) score++;
+                    if (document.getElementById("question5").value.trim().toLowerCase() === correctAnswers.question5.toLowerCase()) score++;
 
                     // Pemeriksaan Checkbox
                     let selectedCheckboxes = Array.from(document.querySelectorAll('input[name="question8"]:checked')).map(cb => cb.value);
                     if (JSON.stringify(selectedCheckboxes.sort()) === JSON.stringify(correctAnswers.question8.sort())) score++;
 
                     // Tampilkan hasil
-                    document.getElementById("result").innerText = Skor Anda: ${score} dari ${totalQuestions};
+                    document.getElementById("result").innerText = `Skor Anda: ${score} dari ${totalQuestions}`;
                 }
             </script>
 
@@ -106,6 +116,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </div>
+
 
 <div class="pagination">
     <a href="{{ route('bab2.page', ['page' => 2]) }}" class="btn btn-back">Back</a>

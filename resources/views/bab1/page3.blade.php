@@ -4,7 +4,37 @@
 
 <div class="container">
     <div id="scroll-box" class="scroll-box">
+        <h2>H: Offers & Suggestions</h2>
+
+        <!-- Teks Bacaan -->
+        <div class="example-box">
+            <h3>Teks Bacaan</h3>
+            <p>Dalam bahasa Inggris, memberikan saran (*suggestion*) dan menawarkan bantuan (*offer*) adalah bagian penting dalam komunikasi sehari-hari. Berikut beberapa ungkapan yang sering digunakan:
+            </p>
+            <ul>
+                <li><strong>Saran (*Suggestions*):</strong>
+                    <ul>
+                        <li>"I think you should..." (Saya pikir Anda sebaiknya...)</li>
+                        <li>"How about..." (Bagaimana kalau...)</li>
+                        <li>"Why don't you..." (Mengapa Anda tidak...)</li>
+                        <li>"You could..." (Anda bisa...)</li>
+                    </ul>
+                </li>
+                <li><strong>Penawaran (*Offers*):</strong>
+                    <ul>
+                        <li>"Can I help you?" (Bisakah saya membantu Anda?)</li>
+                        <li>"Would you like me to...?" (Apakah Anda ingin saya...?)</li>
+                        <li>"Shall I...?" (Haruskah saya...?)</li>
+                        <li>"Let me..." (Biarkan saya...)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>Gunakan ungkapan-ungkapan ini untuk menunjukkan perhatian Anda terhadap orang lain dalam situasi tertentu.</p>
+        </div>
+
+        <!-- Latihan Soal -->
         <h2>H: Latihan Soal</h2>
+
         <div class="example-box">
             <h3>Latihan 1: Pilihan Ganda</h3>
             <p>Pilihlah jawaban yang benar untuk melengkapi kalimat di bawah ini.</p>
@@ -98,15 +128,15 @@
                 if (JSON.stringify(selectedCheckboxes.sort()) === JSON.stringify(correctAnswers.question8.sort())) score++;
 
                 // Tampilkan hasil
-                document.getElementById("result").innerText = Skor Anda: ${score} dari ${totalQuestions};
+                document.getElementById("result").innerText = `Skor Anda: ${score} dari ${totalQuestions}`;
             }
         </script>
-
 
         <!-- Bootstrap JS -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     </div>
 </div>
+
 
 <div class="pagination">
     <a href="{{ route('bab1.page', ['page' => 2]) }}" class="btn btn-back">Back</a>
