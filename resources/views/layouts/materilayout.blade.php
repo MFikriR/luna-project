@@ -295,9 +295,12 @@
             scroll-behavior: smooth;
         }
 
-        .rotate {
-        transform: rotate(180deg);
+        .chevron-icon {
         transition: transform 0.3s ease;
+        }
+
+        .chevron-icon.rotate {
+            transform: rotate(180deg);
         }
 
         .building-blocks {
@@ -456,20 +459,34 @@
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.querySelector('.navbar-toggler');
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.querySelector('.navbar-toggler');
 
-        toggleBtn.addEventListener('click', function () {
-            sidebar.classList.toggle('active');
+    // Toggle sidebar
+    toggleBtn.addEventListener('click', function () {
+        sidebar.classList.toggle('active');
+    });
+
+    // Add event listeners for dropdown collapse
+    document.querySelectorAll('.toggle-icon').forEach(toggle => {
+        const targetId = toggle.getAttribute('data-bs-target');
+        const target = document.querySelector(targetId);
+
+        // Event saat dropdown dibuka
+        target.addEventListener('shown.bs.collapse', function () {
+            const chevron = toggle.querySelector('.chevron-icon');
+            chevron.classList.add('rotate');
         });
 
-        document.querySelectorAll('.toggle-icon').forEach(toggle => {
-        toggle.addEventListener('click', function () {
-            const chevron = this.querySelector('.chevron-icon');
-            chevron.classList.toggle('rotate');
+        // Event saat dropdown ditutup
+        target.addEventListener('hidden.bs.collapse', function () {
+            const chevron = toggle.querySelector('.chevron-icon');
+            chevron.classList.remove('rotate');
         });
     });
     </script>
+
+    
 </body>
 
 </html>
