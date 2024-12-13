@@ -431,19 +431,13 @@
                     </div>
                 </div>
 
-                <!-- Chapter 3 -->
+                <!-- Evaluasi -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon" 
-                    data-bs-toggle="collapse" data-bs-target="#evaluasiContent" aria-expanded="false">
+                    <a href="{{ route('evaluation') }}" class="nav-link d-flex justify-content-between align-items-center">
                         <span><i class="fas fa-book"></i> Evaluasi</span>
-                        <i class="fas fa-chevron-down chevron-icon"></i>
                     </a>
-                    <div class="collapse" id="evaluasiContent">
-                        <div class="nav flex-column ms-3">
-                            <a href="#" class="nav-link"></a>
-                        </div>
-                    </div>
                 </div>
+
             </div>
         </div>
 

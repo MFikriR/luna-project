@@ -18,6 +18,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MiniGamesController;
 use App\Http\Controllers\DragAndDropController;
 use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\EvaluationController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
 // Static
@@ -195,3 +196,5 @@ Route::get('/bab3/page/{page}', [MateriController::class, 'bab3'])->name('bab3.p
 Route::get('/bab3/page1', function () {
     return view('bab3.page1');
 });
+
+Route::get('/evaluation', [EvaluationController::class, 'index'])->name('evaluation');
