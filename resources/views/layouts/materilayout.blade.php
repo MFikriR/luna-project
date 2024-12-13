@@ -8,12 +8,17 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
         body {
             font-family: Arial, sans-serif;
             background-color: #d3e3eb;
             margin: 0;
             padding: 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
         }
 
         /* Container untuk sidebar dan konten */
@@ -227,12 +232,13 @@
 
         /* Kotak dengan scroll */
         .scroll-box {
-            background-color: #ffffff; /* Warna latar putih */
-            border: 1px solid #ccc; /* Garis tepi */
-            padding: 5px; /* Padding di dalam kotak */
-            height: 500px; /* Tinggi tetap */
-            overflow-y: auto; /* Tambahkan scroll secara vertikal */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan untuk tampilan */
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            height: 500px;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Gaya untuk pagination */
@@ -347,6 +353,7 @@
         max-width: 100%;
         height: auto;
         }
+
 
 
 
