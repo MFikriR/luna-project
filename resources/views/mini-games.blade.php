@@ -1,175 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mini Games</title>
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Root Colors */
-        :root {
-            --color-light-blue: #D3E3EB;
-            --color-sky-blue: #97C5D3;
-            --color-muted-blue: #B4C8C8;
-            --color-dark-teal: #54868B;
-            --color-pastel-blue: #CCE1EB;
-            --color-primary: #007bff;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
-        /* Page Background */
         body {
-            background: url('/img/edu.jpg') no-repeat center center fixed;
-            background-size: cover;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
+            background-color: #8ECAE6;
+            background-image: url('/img/edu.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
         }
 
-        /* Navbar Styling */
-        .navbar {
-            background-color: var(--color-primary);
+        h1 {
+            margin-top: 50px;
+            font-size: 36px;
             color: white;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             padding: 10px 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
+            display: inline-block;
+            border-radius: 10px;
+            animation: fadeIn 2s ease-in-out;
         }
 
-        .navbar .navbar-brand {
-            color: white;
-            font-size: 24px;
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .nav-link {
-            color: white !important;
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Jarak antar tombol */
+            margin: 100px 0 50px; /* Jarak ke bawah dan atas */
+            flex-wrap: wrap;
         }
 
-        .nav-link:hover {
-            color: var(--color-pastel-blue) !important;
-        }
-
-        /* Card Styling */
-        .card-game {
-            border: 1px solid var(--color-muted-blue);
-            border-radius: 8px;
-            background-color: var(--color-light-blue);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card-game:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .card-img-top {
-            object-fit: cover;
-            height: 200px;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
-        }
-
-        .card-title {
-            color: var(--color-dark-teal);
-            font-weight: bold;
-        }
-
-        .card-text {
-            color: black(--color-muted-blue);
-            font-size: 14px;
-        }
-
-        .btn-primary {
-            background-color: var(--color-dark-teal);
+        .button {
+            padding: 20px;
+            font-size: 20px; /* Ukuran teks lebih besar */
+            cursor: pointer;
             border: none;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 220px; /* Lebar tombol lebih besar */
+            height: 250px; /* Tinggi tombol lebih besar */
+            background-color: white;
+            position: relative;
         }
 
-        .btn-primary:hover {
-            background-color: var(--color-sky-blue);
+        .button img {
+            width: 180px; /* Ukuran gambar lebih besar */
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .button span {
+            font-size: 18px; /* Ukuran teks */
+            font-family: 'Poppins', sans-serif;
             color: black;
         }
 
-        /* Tambahkan margin-top untuk konten agar tidak tertutup navbar */
-        .content-container {
-            margin-top: 80px; /* Sesuaikan nilainya dengan tinggi navbar */
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
+        footer {
+            margin-top: 50px;
+            font-size: 14px;
+            color: #f1f1f1;
+        }
     </style>
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}">Home</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('mini-games') }}">Mini Games</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('forum') }}">Forum</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Content -->
-    <div class="container mt-5">
-        <div class="content-container">
-            <h1 class="text-center mb-4">Pilih Mini Game</h1>
-            <div class="row g-4">
-                <!-- Card 1: Drag and Drop -->
-                <div class="col-md-4">
-                    <div class="card card-game h-100">
-                        <img src="/img/drag.png" class="card-img-top" alt="Drag and Drop Game">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Drag and Drop</h5>
-                            <p class="card-text">Susun kalimat dengan cara drag and drop kata-kata.</p>
-                            <a href="#" class="btn btn-primary">Mainkan</a>
-                        </div>
-                    </div>
-                </div>
+    <h1>Mini Games</h1>
 
-                <!-- Card 2: Tebak Arti -->
-                <div class="col-md-4">
-                    <div class="card card-game h-100">
-                        <img src="/img/tebak.png" class="card-img-top" alt="Tebak Arti Game">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Tebak Arti</h5>
-                            <p class="card-text">Tebak arti dari kata atau kalimat yang diberikan.</p>
-                            <a href="#" class="btn btn-primary">Mainkan</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3: Percakapan -->
-                <div class="col-md-4">
-                    <div class="card card-game h-100">
-                        <img src="/img/percakapan.png" class="card-img-top" alt="Percakapan Game">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Percakapan</h5>
-                            <p class="card-text">Simulasikan percakapan dalam berbagai situasi.</p>
-                            <a href="#" class="btn btn-primary">Mainkan</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="button-container">
+        <!-- Drag and Drop Game Button -->
+        <button class="button" onclick="window.location.href='{{ route('drag-and-drop') }}'">
+            <img src="/img/DragnDrop3.gif" alt="Drag and Drop">
+            <span>Drag and Drop</span>
+        </button>
+        <!-- Tebak Arti Game Button -->
+        <button class="button" onclick="window.location.href='{{ route('tebak_arti_game') }}'">
+            <img src="/img/tebak.png" alt="Tebak Arti">
+            <span>Tebak Arti</span>
+        </button>
+        <!-- Percakapan Game Button -->
+        <button class="button" onclick="window.location.href='{{ route('percakapan_game') }}'">
+            <img src="/img/percakapan.png" alt="Percakapan">
+            <span>Percakapan</span>
+        </button>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <footer>
+        &copy; 2023 Media Pembelajaran. Semua hak dilindungi.
+    </footer>
 
+</body>
 </html>
