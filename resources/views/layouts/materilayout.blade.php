@@ -390,7 +390,7 @@
 
                 <!-- Chapter 1 with dropdown -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon" 
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon"
                     data-bs-toggle="collapse" data-bs-target="#chapter1Content" aria-expanded="false">
                         <span><i class="fas fa-book"></i> Chapter 1</span>
                         <i class="fas fa-chevron-down chevron-icon"></i>
@@ -405,7 +405,7 @@
 
                 <!-- Chapter 2 -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon" 
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon"
                     data-bs-toggle="collapse" data-bs-target="#chapter2Content" aria-expanded="false">
                         <span><i class="fas fa-book"></i> Chapter 2</span>
                         <i class="fas fa-chevron-down chevron-icon"></i>
@@ -419,7 +419,7 @@
 
                 <!-- Chapter 3 -->
                 <div class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon" 
+                    <a href="#" class="nav-link d-flex justify-content-between align-items-center toggle-icon"
                     data-bs-toggle="collapse" data-bs-target="#chapter3Content" aria-expanded="false">
                         <span><i class="fas fa-book"></i> Chapter 3</span>
                         <i class="fas fa-chevron-down chevron-icon"></i>
@@ -433,7 +433,7 @@
 
                 <!-- Evaluasi -->
                 <div class="nav-item">
-                    <a href="{{ route('evaluation') }}" class="nav-link d-flex justify-content-between align-items-center">
+                    <a href="{{ route('quiz.evaluation') }}" class="nav-link d-flex justify-content-between align-items-center">
                         <span><i class="fas fa-book"></i> Evaluasi</span>
                     </a>
                 </div>
@@ -480,7 +480,7 @@
     });
     </script>
 
-    
+
 </body>
 
 </html>

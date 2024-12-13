@@ -75,8 +75,7 @@ Route::get('/dashboard', [DashboardController::class, 'index'])
 Route::get('/latihan', [LatihanController::class, 'show'])->name('latihan');
 Route::post('/latihan-submit', [LatihanController::class, 'submit'])->name('latihan.submit');
 
-
-Route::get('/forum', [ForumController::class, 'index'])->name(name: 'forum');
+Route::get('/forum', action: [ForumController::class, 'index'])->name(name: 'forum');
 
 Route::get('/bab1', function () {
     return view('bab1');
@@ -97,8 +96,6 @@ Route::get('/bab4', function () {
 Route::get('/bab5', function () {
     return view('bab5');
 })->name('bab5');
-// Tambahkan routes untuk bab-bab lainnya
-
 
 // Route untuk halaman utama Mini Games
 Route::get('/mini-games', [DashboardController::class, 'viewMinigames'])->name('mini-games');
@@ -117,6 +114,9 @@ Route::get('/mini-games/tebak-arti', function () {
 Route::get('/mini-games/percakapan', function () {
     return view('games.percakapan'); // Mengarah ke view percakapan.blade.php
 })->name('percakapan_game');
+
+
+
 
 // ADMIN (Do not change the route name)
 // Rute untuk menampilkan form login admin
@@ -145,6 +145,17 @@ Route::get('/admin/tambah-siswa', [UserController::class, 'create'])->name('admi
 Route::post('/admin/tambah-siswa', [UserController::class, 'store'])->name('admin.simpan-siswa');
 // ----------------------------------------------------------------------------------------------------------- //
 
+
+
+/////////////QUIZ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Halaman untuk menampilkan kuis
+Route::get('/evaluation', [QuizController::class, 'showQuiz'])->name('quiz.evaluation');
+// Route untuk proses submit quiz
+Route::post('/submit-quiz', [QuizController::class, 'submitQuiz'])->name('quiz.submit');
+Route::get('/quiz/result', [QuizController::class, 'quizResult'])->name('quiz.result');
+Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz.start');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Routes yang membutuhkan autentikasi
 Route::middleware(['auth'])->group(function () {
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -153,12 +164,9 @@ Route::get('/forum', [ForumController::class, 'index'])->name('forum');
 });
 
 
-
 // routes/web.php
 Route::get('/tebak_arti_game', [GameController::class, 'index'])->name('tebak_arti_game');
 Route::post('/tebak_arti_game/check', [GameController::class, 'checkAnswer'])->name('tebak_arti_game.check');
-
-
 
 
 // Route untuk halaman percakapan game
@@ -196,5 +204,3 @@ Route::get('/bab3/page/{page}', [MateriController::class, 'bab3'])->name('bab3.p
 Route::get('/bab3/page1', function () {
     return view('bab3.page1');
 });
-
-Route::get('/evaluation', [EvaluationController::class, 'index'])->name('evaluation');
