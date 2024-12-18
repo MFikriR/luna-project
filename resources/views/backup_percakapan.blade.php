@@ -5,7 +5,7 @@
     body {
         font-family: 'Arial', sans-serif;
     }
-
+    
     .chat-container {
         max-width: 600px;
         margin: 0 auto;
@@ -14,7 +14,7 @@
         border-radius: 8px;
         background-color: #f9f9f9;
     }
-
+    
     .chat-row {
         display: flex;
         align-items: flex-start;
@@ -25,7 +25,7 @@
         flex-direction: row; /* Orang kiri (A) */
         justify-content: flex-start;
     }
-
+    
     .right {
         flex-direction: row-reverse; /* Orang kanan (B) */
         justify-content: flex-end;
@@ -37,22 +37,24 @@
         margin-bottom: 10px;
         width: fit-content;
     }
-
+        
     .left-bubble {
         background-color: #d9edf7;
         align-self: flex-start;
         margin-right: auto;
     }
-
+    
     .right-bubble {
         background-color: #fce5cd;
         align-self: flex-end;
         margin-left: auto;
     }
-
+    
     .person-left, .person-right {
-        width: 70px;  /* Mengubah ukuran gambar menjadi 70px */
-        height: auto;  /* Menjaga proporsi gambar */
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
     }
 
     .response-options {
@@ -60,41 +62,42 @@
         flex-direction: column;
         margin-top: 15px;
     }
-
+        
     .response-options button {
         margin-top: 5px;
         text-align: left;
     }
-
+    
     .reset-button {
         margin-top: 20px;
         display: flex;
         justify-content: center;
     }
+
+    .person-left, .person-right {
+    width: 70px;  /* Mengubah ukuran gambar menjadi 150px */
+    height: auto;  /* Menjaga proporsi gambar */
+    }
+
 </style>
 
 <div class="container">
     <div class="content">
-        <h1 class="text-center mb-4">Mini Game: Offers & Suggestions</h1>
+        <h1 class="text-center mb-4">Mini Game: Percakapan</h1>
         <div class="chat-container" id="chatContainer">
             <!-- Percakapan awal -->
-            <div class="chat-row left">
-                <img src="{{ asset('img/girl.png') }}" alt="Person A" class="person-left">
-                <div class="chat-bubble left-bubble">
-                    <strong>A:</strong> Hi there! How are you today?
+            <div class="conversation-container">
+                <p id="botMessage">Hi there! How are you today?</p>
+                <div id="optionsContainer">
+                    <button class="btn btn-outline-primary" onclick="handleOptionClick(1)">I’m good, thank you!</button>
+                    <button class="btn btn-outline-primary" onclick="handleOptionClick(2)">Not so great, unfortunately.</button>
                 </div>
             </div>
         </div>
 
-        <!-- Pilihan jawaban awal -->
-        <div class="response-options" id="optionsContainer">
-            <button class="btn btn-outline-primary" onclick="handleOptionClick(1)">I’m good, thank you!</button>
-            <button class="btn btn-outline-primary" onclick="handleOptionClick(2)">Not so great, unfortunately.</button>
-        </div>
-
         <!-- Tombol Reset -->
         <div class="reset-button">
-            <button class="btn btn-secondary" onclick="resetConversation()">Reset</button>
+            <button class="btn btn-secondary" id="resetButton" onclick="resetConversation()">Reset</button>
         </div>
     </div>
 </div>
@@ -148,27 +151,7 @@
         const stepData = conversationSteps[step];
 
         // Tampilkan balasan bot
-        const chatContainer = document.getElementById("chatContainer");
-        const userMessage = document.createElement("div");
-        userMessage.classList.add("chat-row", "right");
-        userMessage.innerHTML = `
-            <img src="{{ asset('img/boy.png') }}" alt="Person B" class="person-right">
-            <div class="chat-bubble right-bubble">
-                <strong>B:</strong> ${stepData.userResponse}
-            </div>
-        `;
-        chatContainer.appendChild(userMessage);
-
-        // Tampilkan balasan bot
-        const botMessage = document.createElement("div");
-        botMessage.classList.add("chat-row", "left");
-        botMessage.innerHTML = `
-            <img src="{{ asset('img/girl.png') }}" alt="Person A" class="person-left">
-            <div class="chat-bubble left-bubble">
-                <strong>A:</strong> ${stepData.botReply}
-            </div>
-        `;
-        chatContainer.appendChild(botMessage);
+        document.getElementById("botMessage").innerText = stepData.botReply;
 
         // Bersihkan opsi lama
         const optionsContainer = document.getElementById("optionsContainer");
@@ -191,14 +174,7 @@
         currentStep = null;
 
         // Tampilkan pesan awal bot
-        document.getElementById("chatContainer").innerHTML = `
-            <div class="chat-row left">
-                <img src="{{ asset('img/girl.png') }}" alt="Person A" class="person-left">
-                <div class="chat-bubble left-bubble">
-                    <strong>A:</strong> Hi there! How are you today?
-                </div>
-            </div>
-        `;
+        document.getElementById("botMessage").innerText = "Hi there! How are you today?";
 
         // Tampilkan kembali opsi awal
         const optionsContainer = document.getElementById("optionsContainer");
