@@ -142,19 +142,22 @@
         <button class="btn-toggle" id="btn-peta-konsep">Peta Konsep</button>
 
         <!-- Scrollable Box -->
-        <div class="scrollable-box mt-3" id="content-box">
-            <h1>Kompetensi Inti dan Dasar</h1>
+        <!-- Scrollable Box -->
+    <div class="scrollable-box mt-3" id="content-box">
+        <h1>Kompetensi Inti dan Dasar</h1>
+        <ul>
+            <li>3.1 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan should, can.)</li>
+            <li>4.1 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai dengan konteks.</li>
+            <li>3.2 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan I think, I suppose, in my opinion.)</li>
+            <li>4.2 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai konteks.</li>
+            <li>Membedakan fungsi sosial, struktur teks, dan unsur kebahasaan beberapa teks khusus dalam bentuk undangan resmi dengan memberi dan meminta informasi terkait kegiatan sekolah/tempat kerja sesuai dengan konteks penggunaannya.</li>
+            <li>4.3 Teks undangan resmi:</li>
             <ul>
-                <li>Mengidentifikasi jenis teks deskripsi.</li>
-                <li>Menggunakan struktur teks secara efektif.</li>
-                <li>Menerapkan kebahasaan dalam teks.</li>
+                <li>4.3.1 Menangkap makna secara kontekstual terkait fungsi sosial, struktur teks, dan unsur kebahasaan teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja.</li>
+                <li>4.3.2 Menyusun teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan, secara benar dan sesuai konteks.</li>
             </ul>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore culpa sapiente deleniti, quos ex impedit. Libero, temporibus necessitatibus eius, dolorum consequuntur exercitationem atque eos quisquam ea animi officia, distinctio nihil!
-            </p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam tempore fuga recusandae ipsam, quidem natus officiis cupiditate autem, dolorum a doloremque ut non ad id nobis aliquam temporibus? Necessitatibus, ipsam?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit porro aliquam incidunt, dolorum nisi minus, omnis accusantium dolore beatae ullam, nulla totam repellendus necessitatibus ipsa doloremque voluptatum quia laboriosam pariatur?
-            </p>
-        </div>
+        </ul>
+    </div>
 
     </div>
 
@@ -170,19 +173,44 @@
         const contentData = {
             ki_kd: `
                 <h1>Kompetensi Inti dan Dasar</h1>
-                <ul>
-                    <li>Mengidentifikasi jenis teks deskripsi.</li>
-                    <li>Menggunakan struktur teks secara efektif.</li>
-                    <li>Menerapkan kebahasaan dalam teks.</li>
-                </ul>
+                    <ul>
+                        <li>3.1 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan should, can.)</li>
+                        <li>4.1 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai dengan konteks.</li>
+                        <li>3.2 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan I think, I suppose, in my opinion.)</li>
+                        <li>4.2 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai konteks.</li>
+                        <li>Membedakan fungsi sosial, struktur teks, dan unsur kebahasaan beberapa teks khusus dalam bentuk undangan resmi dengan memberi dan meminta informasi terkait kegiatan sekolah/tempat kerja sesuai dengan konteks penggunaannya.</li>
+                        <li>4.3 Teks undangan resmi:</li>
+                        <ul>
+                            <li>4.3.1 Menangkap makna secara kontekstual terkait fungsi sosial, struktur teks, dan unsur kebahasaan teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja.</li>
+                            <li>4.3.2 Menyusun teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan, secara benar dan sesuai konteks.</li>
+                        </ul>
+                    </ul>
             `,
             peta_konsep: `
                 <h1>Peta Konsep</h1>
-                <p>Peta konsep adalah alat bantu untuk memahami keterkaitan antara berbagai kompetensi dan materi pembelajaran.</p>
+                <p>Peta konsep ini membantu memahami keterkaitan antara berbagai kompetensi dan materi pembelajaran dalam topik interaksi transaksional, seperti memberi dan meminta informasi terkait saran, tawaran, pendapat, dan undangan.</p>
                 <ul>
-                    <li>Pengertian Teks</li>
-                    <li>Struktur dan Ciri Kebahasaan</li>
-                    <li>Contoh Implementasi</li>
+                    <li><strong>Saran dan Tawaran:</strong>
+                        <ul>
+                            <li>Fungsi Sosial: Memberikan saran dan tawaran dalam konteks interaksi sosial.</li>
+                            <li>Struktur Teks: Penggunaan ungkapan seperti "Should", "Can", dan "Would" dalam saran dan tawaran.</li>
+                            <li>Kebahasaan: Memahami cara mengungkapkan saran dan tawaran secara tepat dan sopan.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Pendapat dan Pikiran:</strong>
+                        <ul>
+                            <li>Fungsi Sosial: Memberikan pendapat atau pikiran dalam diskusi atau percakapan.</li>
+                            <li>Struktur Teks: Ungkapan seperti "I think", "I suppose", "In my opinion".</li>
+                            <li>Kebahasaan: Cara menyampaikan pendapat dengan sopan dan jelas.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Undangan Resmi:</strong>
+                        <ul>
+                            <li>Fungsi Sosial: Memberikan undangan terkait kegiatan formal atau acara tertentu.</li>
+                            <li>Struktur Teks: Format dan elemen penting dalam undangan resmi, seperti waktu, tempat, dan tujuan.</li>
+                            <li>Kebahasaan: Bahasa yang digunakan dalam undangan resmi, seperti ungkapan "We cordially invite", "Please join us", dll.</li>
+                        </ul>
+                    </li>
                 </ul>
             `
         };

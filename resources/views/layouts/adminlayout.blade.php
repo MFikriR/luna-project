@@ -5,19 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Admin</title>
+    <title>Home</title>
     <link rel="stylesheet" href="{{ asset('css/adminlayout.css') }}">
+
+    <style>
+        /* Styling Navbar - Navbar sampai ujung */
+        nav {
+            background-color: #007bff;
+            padding: 10px 20px;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Sidebar Styling */
+        #sidebar {
+            width: 250px;
+            background-color: white;
+            padding-top: 20px;
+            position: fixed;
+            top: 60px;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+            z-index: 999;
+            border-right: 2px solid #ddd;
+        }
+
+        #sidebar.hide {
+            width: 0;
+            overflow: hidden;
+        }
+
+        .side-menu li a {
+            color: #343a40;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .side-menu li a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .side-menu li a .icon {
+            margin-right: 10px;
+        }
+
+        /* Content Area */
+        #content {
+            margin-left: 250px;
+            margin-top: 60px;
+            padding: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+        #content.hide {
+            margin-left: 0;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 767px) {
+            #sidebar {
+                width: 0;
+                position: absolute;
+            }
+
+            #sidebar.hide {
+                width: 250px;
+            }
+
+            #content {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <div class="layout-wrapper">
-        <!-- {{-- SIDEBAR --}} -->
+        <!-- Sidebar -->
         <section id="sidebar">
-            <a href="#" class="brand"><i class='bx bxs-user icon'></i>Admin</a>
+            <a href="#" class="brand"><i class='bx bxs-home icon'></i>Admin</a>
             <ul class="side-menu">
-                <li><a href="#" class="active"><i class='bx bxs-dashboard icon'></i>Dashboard</a></li>
+                <li><a href="{{ route('admin.dashboard')}}" class="active"><i class='bx bxs-dashboard icon'></i>Dashboard</a></li>
                 <li>
-                    <a href="#"><i class='bx bxs-user-detail icon'></i>Manajemen Siswa <i class='bx bx-chevron-right icon-right icon'></i></a>
+                    <a href="#"><i class='bx bxs-user-detail icon'></i>Manajemen Siswa <i class='bx bx-chevron-right icon-right'></i></a>
                     <ul class="side-dropdown">
                         <li><a href="{{ route('admin.daftar-siswa')}}">Daftar Siswa</a></li>
                         <li><a href="{{ route('admin.tambah-siswa')}}">Tambah Siswa</a></li>
@@ -27,55 +120,23 @@
                 <li><a href="#"><i class='bx bx-log-out icon'></i>Logout</a></li>
             </ul>
         </section>
-        <!-- {{-- SIDEBAR --}} -->
+        <!-- Sidebar -->
 
         <section id="content">
-            <!-- {{-- NAVBAR --}} -->
+            <!-- Navbar -->
             <nav>
-                <i class='bx bx-menu toggle-sidebar'></i>
-                <form action="#">
-                    <div class="form-group">
-                        <input type="text" placeholder="Search...">
-                        <i class='bx bx-search icon'></i>
-                    </div>
-                </form>
-                <a href="#" class="nav-link">
-                    <i class='bx bxs-bell icon'></i>
-                    <span class="badge">5</span>
-                </a>
-                <a href="#" class="nav-link">
-                    <i class='bx bxs-message-square-dots icon'></i>
-                    <span class="badge">8</span>
-                </a>
-                <span class="divider"></span>
-                <div class="profile">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGVvcGxlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="">
-                    <ul class="profile-link">
-                        <li><a href="#"><i class='bx bxs-user-circle icon'></i> Profile</a></li>
-                        <li><a href="#"><i class='bx bxs-cog'></i> Settings</a></li>
-                        <li><a href="#"><i class='bx bxs-log-out-circle'></i> Logout</a></li>
-                    </ul>
-                </div>
+                <div class="navbar-brand">Home</div>
             </nav>
-            <!-- {{-- NAVBAR --}} -->
+            <!-- Navbar -->
 
-            <!-- {{-- CONTENT DINAMIS --}} -->
+            <!-- Content -->
             <div class="main-content">
-                @yield('content')  <!-- Tempat untuk konten dinamis -->
+                @yield('content')
             </div>
-            <!-- {{-- CONTENT DINAMIS --}} -->
+            <!-- Content -->
         </section>
     </div>
 
     <script src="{{ asset('js/adminlayout.js') }}"></script>
-    <script>
-        // JavaScript untuk toggle sidebar
-        const toggleButton = document.querySelector('.toggle-sidebar');
-        const sidebar = document.getElementById('sidebar');
-
-        toggleButton.addEventListener('click', function() {
-            sidebar.classList.toggle('hide');  // Menambah/menghapus class 'hide'
-        });
-    </script>
 </body>
 </html>
