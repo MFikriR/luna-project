@@ -81,7 +81,7 @@
             <div class="chat-row left">
                 <img src="{{ asset('img/girl.png') }}" alt="Person A" class="person-left">
                 <div class="chat-bubble left-bubble">
-                    <strong>A:</strong> Hi there! How are you today?
+                    <strong>She:</strong> Hi there! How are you today?
                 </div>
             </div>
         </div>
@@ -104,41 +104,116 @@
     const conversationSteps = {
         1: {
             userResponse: "I’m good, thank you!",
-            botReply: "That's great to hear! What are you up to today?",
+            botReply: "That's great to hear! What are you in the mood for today?",
             options: [
-                { text: "Just relaxing at home.", nextStep: 3 },
-                { text: "Going out with friends.", nextStep: 4 }
+                { text: "Let’s talk about Offers & Suggestions.", nextStep: 2 },
+                { text: "I’d like to discuss Opinions.", nextStep: 8 },
+                { text: "It’s Party Time!", nextStep: 14 }
             ]
         },
         2: {
-            userResponse: "Not so great, unfortunately.",
-            botReply: "Oh no, I hope things get better. Would you like to talk about it?",
+            userResponse: "Let’s talk about Offers & Suggestions.",
+            botReply: "Alright! Would you like me to offer suggestions, or are you looking to suggest something?",
             options: [
-                { text: "Sure, I'd love to.", nextStep: 5 },
-                { text: "Maybe some other time.", nextStep: 6 }
+                { text: "I’d like to hear your suggestions.", nextStep: 3 },
+                { text: "I have a suggestion.", nextStep: 4 }
             ]
         },
         3: {
-            userResponse: "Just relaxing at home.",
-            botReply: "That sounds peaceful! Sometimes a quiet day is all you need.",
-            options: []
+            userResponse: "I’d like to hear your suggestions.",
+            botReply: "Sure! How about trying a new recipe or going for a short trip this weekend?",
+            options: [
+                { text: "Trying a new recipe sounds fun!", nextStep: 5 },
+                { text: "A short trip sounds refreshing.", nextStep: 6 }
+            ]
         },
         4: {
-            userResponse: "Going out with friends.",
-            botReply: "Have fun! Spending time with friends is always great.",
-            options: []
+            userResponse: "I have a suggestion.",
+            botReply: "That’s great! What do you have in mind?",
+            options: [
+                { text: "We could organize a community event.", nextStep: 7 },
+                { text: "How about a team-building activity?", nextStep: 7 }
+            ]
         },
         5: {
-            userResponse: "Sure, I'd love to.",
-            botReply: "I'm here to listen. Sometimes it helps to talk things out.",
+            userResponse: "Trying a new recipe sounds fun!",
+            botReply: "Awesome! Let me know how it turns out. Cooking can be a great way to relax.",
             options: []
         },
         6: {
-            userResponse: "Maybe some other time.",
-            botReply: "Alright, no worries. I'm here whenever you need to talk.",
+            userResponse: "A short trip sounds refreshing.",
+            botReply: "Great choice! Exploring new places can really clear your mind.",
+            options: []
+        },
+        7: {
+            userResponse: "We could organize a community event.",
+            botReply: "That’s a fantastic suggestion! Bringing people together is always a good idea.",
+            options: []
+        },
+        8: {
+            userResponse: "I’d like to discuss Opinions.",
+            botReply: "Alright! Do you want to share your opinion, or hear mine?",
+            options: [
+                { text: "I want to share my opinion.", nextStep: 9 },
+                { text: "I’d like to hear your opinion.", nextStep: 10 }
+            ]
+        },
+        9: {
+            userResponse: "I want to share my opinion.",
+            botReply: "Go ahead, I’m listening. What’s on your mind?",
+            options: [
+                { text: "I think technology has both helped and hindered us.", nextStep: 11 },
+                { text: "I believe teamwork is more effective than working alone.", nextStep: 12 }
+            ]
+        },
+        10: {
+            userResponse: "I’d like to hear your opinion.",
+            botReply: "I think learning to listen to different perspectives is a skill we should all practice.",
+            options: []
+        },
+        11: {
+            userResponse: "I think technology has both helped and hindered us.",
+            botReply: "That’s a valid point. It’s amazing for communication but can also be distracting.",
+            options: []
+        },
+        12: {
+            userResponse: "I believe teamwork is more effective than working alone.",
+            botReply: "Absolutely! Collaboration can bring out the best in everyone.",
+            options: []
+        },
+        14: {
+            userResponse: "It’s Party Time!",
+            botReply: "Woohoo! What kind of party are you in the mood for?",
+            options: [
+                { text: "A chill movie night.", nextStep: 15 },
+                { text: "A dance party with friends.", nextStep: 16 }
+            ]
+        },
+        15: {
+            userResponse: "A chill movie night.",
+            botReply: "Great choice! Grab some popcorn and pick a good movie. Any genre in mind?",
+            options: [
+                { text: "Comedy sounds great!", nextStep: 17 },
+                { text: "I’m in the mood for action.", nextStep: 18 }
+            ]
+        },
+        16: {
+            userResponse: "A dance party with friends.",
+            botReply: "Let’s turn up the music! Don’t forget to set up a playlist everyone will love.",
+            options: []
+        },
+        17: {
+            userResponse: "Comedy sounds great!",
+            botReply: "Laughter is the best medicine. Enjoy the show!",
+            options: []
+        },
+        18: {
+            userResponse: "I’m in the mood for action.",
+            botReply: "Adrenaline-pumping movies are always exciting. Have fun!",
             options: []
         }
     };
+
 
     let currentStep = null;
 
@@ -154,7 +229,7 @@
         userMessage.innerHTML = `
             <img src="{{ asset('img/boy.png') }}" alt="Person B" class="person-right">
             <div class="chat-bubble right-bubble">
-                <strong>B:</strong> ${stepData.userResponse}
+                <strong>You:</strong> ${stepData.userResponse}
             </div>
         `;
         chatContainer.appendChild(userMessage);
@@ -165,7 +240,7 @@
         botMessage.innerHTML = `
             <img src="{{ asset('img/girl.png') }}" alt="Person A" class="person-left">
             <div class="chat-bubble left-bubble">
-                <strong>A:</strong> ${stepData.botReply}
+                <strong>She:</strong> ${stepData.botReply}
             </div>
         `;
         chatContainer.appendChild(botMessage);
@@ -195,7 +270,7 @@
             <div class="chat-row left">
                 <img src="{{ asset('img/girl.png') }}" alt="Person A" class="person-left">
                 <div class="chat-bubble left-bubble">
-                    <strong>A:</strong> Hi there! How are you today?
+                    <strong>She:</strong> Hi there! How are you today?
                 </div>
             </div>
         `;
