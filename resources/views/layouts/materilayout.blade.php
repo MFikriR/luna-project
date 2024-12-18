@@ -399,6 +399,88 @@
             transform: scale(0.95); /* Sedikit mengecil saat ditekan */
         }
 
+        input[type="text"] {
+            width: 80%; /* Lebar input disesuaikan */
+            padding: 10px; /* Padding untuk kenyamanan pengguna */
+            margin-top: 5px; /* Spasi atas untuk input */
+            margin-bottom: 10px; /* Spasi bawah untuk input */
+            border: 1px solid #ccc; /* Warna border */
+            border-radius: 5px; /* Border melengkung */
+            font-size: 16px; /* Ukuran font */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+            transition: all 0.3s ease; /* Animasi transisi */
+        }
+
+        /* Gaya saat input difokuskan */
+        input[type="text"]:focus {
+            border-color: #007bff; /* Warna border saat fokus */
+            outline: none; /* Hilangkan outline default */
+            box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Tambahkan bayangan saat fokus */
+        }
+
+        input[type="radio"] {
+            -webkit-appearance: none; /* Menghilangkan gaya default di beberapa browser */
+            -moz-appearance: none; /* Menghilangkan gaya default di Firefox */
+            appearance: none; /* Menghilangkan gaya default di browser modern */
+            width: 20px; /* Ukuran radio button */
+            height: 20px; /* Ukuran radio button */
+            border: 2px solid #007bff; /* Warna border */
+            border-radius: 50%; /* Bentuk bulat */
+            background-color: #fff; /* Latar belakang putih */
+            cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+            position: relative;
+            transition: all 0.3s ease; /* Animasi transisi */
+        }
+
+        /* Gaya saat radio button dalam keadaan dipilih */
+        input[type="radio"]:checked {
+            background-color: #007bff; /* Warna latar belakang saat dipilih */
+            border-color: #007bff; /* Warna border saat dipilih */
+        }
+
+        /* Gaya untuk titik di dalam radio button yang menunjukkan pemilihan */
+        input[type="radio"]:checked::after {
+            content: ''; /* Menambahkan elemen pseudo */
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%; /* Membuat titik dalam bentuk bulat */
+            background-color: #fff; /* Warna titik dalam */
+        }
+
+        input[type="checkbox"] {
+            -webkit-appearance: none; /* Menghilangkan gaya default di beberapa browser */
+            -moz-appearance: none; /* Menghilangkan gaya default di Firefox */
+            appearance: none; /* Menghilangkan gaya default di browser modern */
+            width: 20px; /* Ukuran checkbox */
+            height: 20px; /* Ukuran checkbox */
+            border: 2px solid #007bff; /* Warna border */
+            border-radius: 4px; /* Sudut yang sedikit membulat */
+            background-color: #fff; /* Latar belakang putih */
+            cursor: pointer; /* Mengubah kursor menjadi pointer saat hover */
+            position: relative;
+            transition: all 0.3s ease; /* Animasi transisi */
+        }
+
+        /* Gaya saat checkbox dalam keadaan dipilih */
+        input[type="checkbox"]:checked {
+            background-color: #007bff; /* Warna latar belakang saat dipilih */
+            border-color: #007bff; /* Warna border saat dipilih */
+        }
+
+        /* Gaya untuk tanda centang di dalam checkbox yang menunjukkan pemilihan */
+        input[type="checkbox"]:checked::after {
+            content: ''; /* Menambahkan elemen pseudo */
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            width: 8px;
+            height: 8px;
+            background-color: #fff; /* Warna tanda centang */
+            transform: rotate(45deg); /* Membuat tanda centang */
+        }
 
 
 
