@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Score;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,5 +43,13 @@ class AdminController extends Controller
 
         // Redirect ke halaman login admin
         return redirect('/')->with('success', 'Anda berhasil logout.');
+    }
+    public function showScores()
+    {
+        // Ambil data skor siswa dari database
+        $scores = Score::with('user')->get(); // Pastikan relasi 'user' sudah diatur di model Score
+
+        // Return view dengan data skor
+        return view('layouts.skorsiswa', compact('scores'));
     }
 }

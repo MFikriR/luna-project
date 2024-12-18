@@ -128,6 +128,8 @@ Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.logi
 // Rute untuk dashboard admin, dilindungi oleh middleware auth:admin
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/scores', [AdminController::class, 'showScores'])->name('admin.skorsiswa')->middleware('auth:admin');
+
 });
 Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
