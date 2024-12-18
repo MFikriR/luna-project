@@ -33,14 +33,10 @@ class AdminController extends Controller
     }
     public function logout(Request $request)
     {
-        // Logout admin
-        auth('admin')->logout();
+        // Logout admin menggunakan guard 'admin'
+        Auth::guard('admin')->logout();
 
-        // Invalidate session
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
-
-        // Redirect ke halaman login admin
-        return redirect('/')->with('success', 'Anda berhasil logout.');
+        // Redirect ke halaman login admin setelah logout
+        return redirect()->route('admin.login')->with('success', 'Anda telah logout.');
     }
 }

@@ -130,9 +130,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 });
 
-Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
-    ->middleware('auth')
-    ->name('logout');
+Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
 // Daftar Siswa
 Route::get('/admin/daftar-siswa', [UserController::class, 'index'])->name('admin.daftar-siswa');
