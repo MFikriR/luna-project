@@ -3,15 +3,29 @@
 @section('content')
 
 <div class="container">
-    <div id="scroll-box" class="scroll-box">
+    <div id="scroll-box" class="scroll-box-quiz">
+        @if(isset($user))
+            <p>Welcome, {{ $user->name }}!</p>
+        @else
+            <p>You are not logged in.</p>
+        @endif
+
         <h2 class="text-center mb-4">Evaluation</h2>
+        <!-- Tambahan: Div untuk teks instruksi -->
+        <div class="instruction-box p-3 mb-4 rounded shadow">
+            <h4 class="text-center text-primary">Instruksi</h4>
+            <p class="text-center mb-0">
+                Setelah membaca materi, silakan jawab evaluasi di bawah ini dengan teliti.
+                Pilih salah satu jawaban yang paling tepat untuk setiap pertanyaan.
+            </p>
+        </div>
 
         <form action="{{ route('quiz.submit') }}" method="POST">
             @csrf
             <div class="quiz-container">
                 @foreach($questions as $question)
-                    <div class="question-item">
-                        <h4>{{ $question->question }}</h4>
+                    <div class="question-item mb-4 p-4 rounded shadow">
+                        <h5 class="question-title mb-3">{{ $question->question }}</h5>
 
                         <div class="options">
                             <div class="form-check">

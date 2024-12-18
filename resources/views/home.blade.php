@@ -117,7 +117,7 @@
             <span>Informasi</span>
         </button>
     </div>
-    
+
 
     <footer>
         &copy; 2023 Media Pembelajaran. Semua hak dilindungi.

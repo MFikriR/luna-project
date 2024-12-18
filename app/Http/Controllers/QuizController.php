@@ -20,6 +20,9 @@ class QuizController extends Controller
             'answers' => 'required|array',
         ]);
 
+        // Total pertanyaan
+        $totalQuestions = Question::count();
+
         // Cek jawaban soal dan hitung skor
         foreach ($request->answers as $question_id => $answer) {
             $question = Question::find($question_id);
@@ -33,66 +36,101 @@ class QuizController extends Controller
                 // Simpan jawaban ke tabel answers
                 Answer::create([
                     'user_id' => $user->id,
-                    'question_id' => $question_id,  // Menyimpan ID soal, bukan teks soal
+                    'question_id' => $question_id,
                     'answer' => $answer,
-                    'is_correct' => $question->correct_answer == $answer,  // Cek apakah jawaban benar
+                    'is_correct' => $question->correct_answer == $answer,
                 ]);
             }
         }
 
-        // Cek apakah skor untuk user ini sudah ada sebelumnya
-        $existingScore = Score::where('user_id', $user->id)->first();  // Hanya berdasarkan user_id
+        // Menghitung skor akhir dalam bentuk persentase
+        $finalScore = round(($score / $totalQuestions) * 100, 2); // Persentase dengan 2 desimal
 
+        // Simpan atau update skor di database
+        $existingScore = Score::where('user_id', $user->id)->first();
         if ($existingScore) {
-            // Jika sudah mencapai batas percobaan dan nilai sudah final
-            if ($existingScore->attempts >= 2) {
-                // Update status final jika sudah mencapai batas percobaan
-                $existingScore->is_final = true;
-                $existingScore->save();
-                return redirect()->route('quiz.result')->with('message', 'Nilai Anda sudah final, Anda sudah mencapai batas percobaan.');
-            }
-
-            // Jika belum mencapai batas percobaan, update skor dan percobaan
+            $existingScore->score = $finalScore;
             $existingScore->attempts += 1;
-            $existingScore->score = $score;  // Update skor
             $existingScore->save();
-
-            return redirect()->route('quiz.result')->with('message', 'Skor Anda telah diperbarui.');
         } else {
-            // Buat entri baru untuk skor jika belum ada
             Score::create([
                 'user_id' => $user->id,
-                'score' => $score,
+                'score' => $finalScore,
                 'attempts' => 1,
             ]);
-
-            return redirect()->route('quiz.result')->with('message', 'Skor pertama Anda berhasil disimpan.');
         }
+
+        // Redirect ke halaman hasil
+        return view('result', [
+            'user' => $user,
+            'score' => $finalScore,
+            'totalQuestions' => $totalQuestions,
+        ]);
     }
+
+
 
     public function showQuiz()
-    {
-        // Mengambil soal-soal dari database
-        $questions = Question::all();
+{
+    $user = Auth::user();  // Mendapatkan data pengguna yang sedang login
 
-        // Menampilkan halaman kuis dengan view evaluation
-        return view('evaluation', compact('questions'));
+    // Ambil skor pengguna berdasarkan user_id
+    $score = Score::where('user_id', $user->id)->first();
+
+    // Jika skor ditemukan dan percobaan >= 3, arahkan ke hasil
+    if ($score && $score->attempts >= 3) {
+        return redirect()->route('quiz.result')->with('message', 'Anda telah mencapai batas maksimal percobaan.');
     }
+
+    // Jika skor tidak ditemukan (belum pernah mengerjakan), tampilkan kuis
+    if (!$score || $score->attempts == 0) {
+        // Ambil soal-soal kuis jika belum ada skor atau percobaan pertama
+        $questions = Question::all();
+        return view('evaluation', compact('questions', 'user'));  // Kirim $user ke view
+    }
+
+    // Jika sudah ada percobaan, arahkan ke halaman hasil
+    return redirect()->route('quiz.result');
+}
+
+
 
     public function quizResult()
     {
-        $user = Auth::user();
+        $user = Auth::user();  // Mendapatkan data pengguna yang sedang login
 
-        // Ambil skor dan informasi kuis
+        // Ambil skor pengguna berdasarkan user_id
         $score = Score::where('user_id', $user->id)->first();
-        $questions = Question::all(); // Total soal untuk menampilkan nilai maksimal
+        $questions = Question::all(); // Ambil semua soal untuk menghitung jumlah soal
 
         if (!$score) {
             // Jika skor tidak ditemukan, arahkan kembali
             return redirect()->route('quiz.start')->with('message', 'Anda belum mengikuti kuis.');
         }
 
+        $totalQuestions = $questions->count(); // Menghitung jumlah soal
+
         // Tampilkan halaman hasil kuis
-        return view('result', compact('score', 'questions'));
+        return view('result', compact('score', 'user', 'questions', 'totalQuestions'));
     }
+    public function retryQuiz()
+    {
+        $user = Auth::user();
+
+        // Ambil skor pengguna berdasarkan user_id
+        $score = Score::where('user_id', $user->id)->first();
+
+        // Jika skor tidak ditemukan atau user sudah mencapai batas percobaan
+        if (!$score || $score->attempts >= 3) {
+            return redirect()->route('quiz.result')->with('message', 'Anda tidak dapat melakukan retry, sudah mencapai batas percobaan.');
+        }
+
+        // Tambahkan percobaan baru
+        $score->increment('attempts');
+        $score->save();
+
+        // Redirect ke halaman kuis
+        return redirect()->route('quiz.start');
+    }
+
 }

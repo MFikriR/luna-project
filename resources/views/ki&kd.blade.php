@@ -146,15 +146,15 @@
     <div class="scrollable-box mt-3" id="content-box">
         <h1>Kompetensi Inti dan Dasar</h1>
         <ul>
-            <li>3.1 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan should, can.)</li>
-            <li>4.1 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai dengan konteks.</li>
-            <li>3.2 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan I think, I suppose, in my opinion.)</li>
-            <li>4.2 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai konteks.</li>
-            <li>Membedakan fungsi sosial, struktur teks, dan unsur kebahasaan beberapa teks khusus dalam bentuk undangan resmi dengan memberi dan meminta informasi terkait kegiatan sekolah/tempat kerja sesuai dengan konteks penggunaannya.</li>
-            <li>4.3 Teks undangan resmi:</li>
+            <li>3.1 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait Suggetion & Offers, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan should, can.)</li>
+            <li>4.1 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait Suggetion & Offers, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai dengan konteks.</li>
+            <li>3.2 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait Opinions & Thoughts, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan I think, I suppose, in my opinion.)</li>
+            <li>4.2 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait Opinions & Thoughts, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai konteks.</li>
+            <li>Membedakan fungsi sosial, struktur teks, dan unsur kebahasaan beberapa teks khusus dalam bentuk Invitation dengan memberi dan meminta informasi terkait kegiatan sekolah/tempat kerja sesuai dengan konteks penggunaannya.</li>
+            <li>4.3 Teks Invitation:</li>
             <ul>
-                <li>4.3.1 Menangkap makna secara kontekstual terkait fungsi sosial, struktur teks, dan unsur kebahasaan teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja.</li>
-                <li>4.3.2 Menyusun teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan, secara benar dan sesuai konteks.</li>
+                <li>4.3.1 Menangkap makna secara kontekstual terkait fungsi sosial, struktur teks, dan unsur kebahasaan teks khusus dalam bentuk Invitation lisan dan tulis, terkait kegiatan sekolah/tempat kerja.</li>
+                <li>4.3.2 Menyusun teks khusus dalam bentuk Invitation lisan dan tulis, terkait kegiatan sekolah/tempat kerja, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan, secara benar dan sesuai konteks.</li>
             </ul>
         </ul>
     </div>
@@ -174,15 +174,15 @@
             ki_kd: `
                 <h1>Kompetensi Inti dan Dasar</h1>
                     <ul>
-                        <li>3.1 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan should, can.)</li>
-                        <li>4.1 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait saran dan tawaran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai dengan konteks.</li>
-                        <li>3.2 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan I think, I suppose, in my opinion.)</li>
-                        <li>4.2 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait pendapat dan pikiran, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai konteks.</li>
-                        <li>Membedakan fungsi sosial, struktur teks, dan unsur kebahasaan beberapa teks khusus dalam bentuk undangan resmi dengan memberi dan meminta informasi terkait kegiatan sekolah/tempat kerja sesuai dengan konteks penggunaannya.</li>
-                        <li>4.3 Teks undangan resmi:</li>
+                        <li>3.1 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait Suggetion & Offers, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan should, can.)</li>
+                        <li>4.1 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait Suggetion & Offers, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai dengan konteks.</li>
+                        <li>3.2 Menerapkan fungsi sosial, struktur teks, dan unsur kebahasaan teks interaksi transaksional lisan dan tulis yang melibatkan tindakan memberi dan meminta informasi terkait Opinions & Thoughts, sesuai dengan konteks penggunaannya. (Perhatikan unsur kebahasaan I think, I suppose, in my opinion.)</li>
+                        <li>4.2 Menyusun teks interaksi transaksional, lisan dan tulis, pendek dan sederhana, yang melibatkan tindakan memberi dan meminta informasi terkait Opinions & Thoughts, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan yang benar dan sesuai konteks.</li>
+                        <li>Membedakan fungsi sosial, struktur teks, dan unsur kebahasaan beberapa teks khusus dalam bentuk Invitation dengan memberi dan meminta informasi terkait kegiatan sekolah/tempat kerja sesuai dengan konteks penggunaannya.</li>
+                        <li>4.3 Teks Invitation:</li>
                         <ul>
-                            <li>4.3.1 Menangkap makna secara kontekstual terkait fungsi sosial, struktur teks, dan unsur kebahasaan teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja.</li>
-                            <li>4.3.2 Menyusun teks khusus dalam bentuk undangan resmi lisan dan tulis, terkait kegiatan sekolah/tempat kerja, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan, secara benar dan sesuai konteks.</li>
+                            <li>4.3.1 Menangkap makna secara kontekstual terkait fungsi sosial, struktur teks, dan unsur kebahasaan teks khusus dalam bentuk Invitation lisan dan tulis, terkait kegiatan sekolah/tempat kerja.</li>
+                            <li>4.3.2 Menyusun teks khusus dalam bentuk Invitation lisan dan tulis, terkait kegiatan sekolah/tempat kerja, dengan memperhatikan fungsi sosial, struktur teks, dan unsur kebahasaan, secara benar dan sesuai konteks.</li>
                         </ul>
                     </ul>
             `,
@@ -190,25 +190,25 @@
                 <h1>Peta Konsep</h1>
                 <p>Peta konsep ini membantu memahami keterkaitan antara berbagai kompetensi dan materi pembelajaran dalam topik interaksi transaksional, seperti memberi dan meminta informasi terkait saran, tawaran, pendapat, dan undangan.</p>
                 <ul>
-                    <li><strong>Saran dan Tawaran:</strong>
+                    <li><strong>Suggetion & Offers:</strong>
                         <ul>
-                            <li>Fungsi Sosial: Memberikan saran dan tawaran dalam konteks interaksi sosial.</li>
-                            <li>Struktur Teks: Penggunaan ungkapan seperti "Should", "Can", dan "Would" dalam saran dan tawaran.</li>
-                            <li>Kebahasaan: Memahami cara mengungkapkan saran dan tawaran secara tepat dan sopan.</li>
+                            <li>Fungsi Sosial: Memberikan Suggetion & Offers dalam konteks interaksi sosial.</li>
+                            <li>Struktur Teks: Penggunaan ungkapan seperti "Should", "Can", dan "Would" dalam Suggetion & Offers.</li>
+                            <li>Kebahasaan: Memahami cara mengungkapkan Suggetion & Offers secara tepat dan sopan.</li>
                         </ul>
                     </li>
-                    <li><strong>Pendapat dan Pikiran:</strong>
+                    <li><strong>Opinions & Thoughts:</strong>
                         <ul>
                             <li>Fungsi Sosial: Memberikan pendapat atau pikiran dalam diskusi atau percakapan.</li>
                             <li>Struktur Teks: Ungkapan seperti "I think", "I suppose", "In my opinion".</li>
                             <li>Kebahasaan: Cara menyampaikan pendapat dengan sopan dan jelas.</li>
                         </ul>
                     </li>
-                    <li><strong>Undangan Resmi:</strong>
+                    <li><strong>Invitation:</strong>
                         <ul>
                             <li>Fungsi Sosial: Memberikan undangan terkait kegiatan formal atau acara tertentu.</li>
-                            <li>Struktur Teks: Format dan elemen penting dalam undangan resmi, seperti waktu, tempat, dan tujuan.</li>
-                            <li>Kebahasaan: Bahasa yang digunakan dalam undangan resmi, seperti ungkapan "We cordially invite", "Please join us", dll.</li>
+                            <li>Struktur Teks: Format dan elemen penting dalam Invitation, seperti waktu, tempat, dan tujuan.</li>
+                            <li>Kebahasaan: Bahasa yang digunakan dalam Invitation, seperti ungkapan "We cordially invite", "Please join us", dll.</li>
                         </ul>
                     </li>
                 </ul>

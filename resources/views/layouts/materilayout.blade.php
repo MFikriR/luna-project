@@ -51,7 +51,7 @@
 
         /* Sidebar Styling */
         .sidebar {
-            width: 250px;
+            width: 260px;
             background-color: white; /* Sidebar berwarna putih */
             padding-top: 20px;
             position: fixed;
@@ -69,12 +69,16 @@
         }
 
         .sidebar .nav-link {
-            color: #343a40;
+            color: white; /* Warna teks putih secara default */
             font-size: 16px;
-            padding: 12px 20px;
-            border-radius: 8px;
+            padding: 12px 22px; /* Padding kiri dan kanan langsung diperbesar */
+            border-radius: 10px;
+            margin-left: 5px; /* Memberikan margin kiri */
+            margin-right: 5px; /* Memberikan margin kanan */
             margin-bottom: 10px;
-            transition: all 0.3s ease;
+            background-color: #007bff; /* Warna background biru langsung diaplikasikan */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+            transition: all 0.3s ease; /* Animasi transisi untuk hover */
         }
 
         .sidebar .nav-link i {
@@ -84,6 +88,7 @@
         .sidebar .nav-link:hover {
             background-color: #007bff; /* Hover berwarna biru */
             color: white;
+            border-radius: 10px;
         }
 
         /* Main Content dan Navbar */
@@ -235,8 +240,17 @@
             background-color: #ffffff;
             border: 1px solid #ccc;
             border-radius: 10px;
-            padding: 15px;
+            padding: 15px 20px;
             height: 500px;
+            overflow-y: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .scroll-box-quiz {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 15px 20px;
+            height: 550px;
             overflow-y: auto;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
@@ -262,7 +276,7 @@
             background-color: #007bff; /* Warna background */
             color: #fff; /* Warna teks */
             text-decoration: none; /* Hilangkan garis bawah */
-            border-radius: 6px; /* Rounded border tombol */
+            border-radius: 10px; /* Rounded border tombol, disamakan dengan sidebar */
             font-size: 14px; /* Ukuran font */
             font-weight: 500; /* Tebal font */
             text-align: center;
@@ -274,7 +288,7 @@
         .pagination .btn:hover {
             background-color: #0056b3; /* Warna saat hover */
             color: #fff; /* Warna teks saat hover */
-            transform: scale(1.05); /* Efek zoom sedikit */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan shadow */
         }
 
         /* Tombol aktif */
@@ -289,13 +303,17 @@
         .pagination .btn-back, .pagination .btn-next {
             font-weight: bold;
             font-size: 12px;
-            background-color: #6c757d; /* Warna tombol tambahan */
-            border: 1px solid #5a6268; /* Warna border tombol tambahan */
+            background-color: #007bff; /* Warna tombol tambahan disamakan */
+            border: 1px solid #0056b3; /* Border warna sama */
+            color: #fff; /* Warna teks */
+            border-radius: 10px; /* Rounded border */
         }
 
         .pagination .btn-back:hover, .pagination .btn-next:hover {
-            background-color: #5a6268; /* Warna saat hover tombol tambahan */
+            background-color: #0056b3; /* Warna hover sama */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efek shadow hover */
         }
+
 
         html {
             scroll-behavior: smooth;
@@ -482,6 +500,49 @@
             transform: rotate(45deg); /* Membuat tanda centang */
         }
 
+        /* Evaluasi */
+        /* Gaya untuk instruksi */
+        .instruction-box {
+            background-color: #f8f9fa; /* Warna latar belakang lembut */
+            border: 1px solid #ddd; /* Border tipis */
+            text-align: center;
+        }
+
+        /* Gaya untuk item pertanyaan */
+        .question-item {
+            background-color: #ffffff; /* Warna putih untuk pertanyaan */
+            border: 1px solid #ddd; /* Border tipis */
+            border-radius: 8px; /* Sudut melengkung */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+        }
+
+        /* Gaya untuk judul pertanyaan */
+        .question-title {
+            color: #343a40; /* Warna teks gelap */
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Gaya untuk pilihan jawaban */
+        .options .form-check {
+            margin-bottom: 10px; /* Jarak antar pilihan */
+        }
+
+        .options .form-check-input {
+            cursor: pointer;
+        }
+
+        .options .form-check-label {
+            font-size: 14px;
+            color: #495057;
+        }
+
+        /* Hover efek untuk pilihan */
+        .options .form-check-label:hover {
+            color: #007bff;
+            font-weight: 500;
+        }
+
 
 
     </style>
@@ -574,6 +635,16 @@
                         <span><i class="fas fa-book"></i> Evaluasi</span>
                     </a>
                 </div>
+
+                <div class="nav-item">
+                    <form action="{{ route('user.logout') }}" method="POST">
+                        @csrf
+                        <button type="submit" class="nav-link d-flex justify-content-between align-items-center btn btn-link border-0 text-decoration-none text-left">
+                            <span><i class="fas fa-sign-out-alt"></i> Logout</span>
+                        </button>
+                    </form>
+                </div>
+
 
             </div>
         </div>

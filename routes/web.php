@@ -66,7 +66,7 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login'])->name('login.store');
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::post('/logout', [LoginController::class, 'logout'])->name('user.logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard')
@@ -147,11 +147,16 @@ Route::post('/admin/tambah-siswa', [UserController::class, 'store'])->name('admi
 
 /////////////QUIZ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Halaman untuk menampilkan kuis
-Route::get('/evaluation', [QuizController::class, 'showQuiz'])->name('quiz.evaluation');
-// Route untuk proses submit quiz
-Route::post('/submit-quiz', [QuizController::class, 'submitQuiz'])->name('quiz.submit');
-Route::get('/quiz/result', [QuizController::class, 'quizResult'])->name('quiz.result');
-Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz.start');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/evaluation', [QuizController::class, 'showQuiz'])->name('quiz.evaluation');
+    // Route untuk proses submit quiz
+    Route::post('/submit-quiz', [QuizController::class, 'submitQuiz'])->name('quiz.submit');
+    Route::get('/quiz/result', [QuizController::class, 'quizResult'])->name('quiz.result');
+    Route::get('/quiz', [QuizController::class, 'showQuiz'])->name('quiz.start');
+    Route::get('/quiz/retry', [QuizController::class, 'retryQuiz'])->name('quiz.retry');
+});
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Routes yang membutuhkan autentikasi

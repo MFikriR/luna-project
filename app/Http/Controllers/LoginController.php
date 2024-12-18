@@ -23,6 +23,8 @@ class LoginController extends Controller
 
         // Cek login
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            $user = Auth::user(); // Ambil user yang berhasil login
+            session(['user' => $user]); // Menyimpan user di sesi
             return redirect()->intended('home')->with('success', 'Selamat datang!');
         }
 
@@ -31,10 +33,18 @@ class LoginController extends Controller
         ])->withInput($request->only('email'));
     }
 
+
     public function logout(Request $request)
     {
+        // Logout user
         Auth::logout();
-        return redirect()->route('login')->with('success', 'Anda telah logout.');
+
+        // Hapus sesi pengguna
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // Redirect ke halaman login
+        return redirect('/login')->with('message', 'Anda telah berhasil logout.');
     }
 }
 // itu btambah
