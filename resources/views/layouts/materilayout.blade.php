@@ -354,6 +354,25 @@
         height: auto;
         }
 
+        .btn-outline-light {
+            border: 2px solid #fff;
+            color: #fff;
+        }
+
+        .btn-outline-light:hover {
+            background-color: #fff;
+            color: #007bff;
+        }
+
+        #translatorModal .modal-content {
+            border-radius: 15px;
+        }
+
+        #translationResult {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #007bff;
+        }
 
 
 
@@ -386,6 +405,9 @@
                             <a class="nav-link active" href="{{ route('forum') }}">Forum</a>
                         </li>
                     </ul>
+                    <button class="btn btn-outline-light no-margin" data-bs-toggle="modal" data-bs-target="#translatorModal">
+                        Translator
+                    </button>
                 </div>
             </div>
         </nav>
@@ -457,6 +479,31 @@
         </div>
     </div>
 
+    {{-- TRABSLATOR --}}
+    <div class="modal fade" id="translatorModal" tabindex="-1" aria-labelledby="translatorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="translatorModalLabel">Terjemah ke Inggris</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="translator-form" onsubmit="return translateWord(event)">
+                        <div class="mb-3">
+                            <label for="translator-input" class="form-label">Masukkan kata atau kalimat</label>
+                            <input type="text" id="translator-input" class="form-control" placeholder="Masukkan teks" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Terjemahkan</button>
+                    </form>
+                    <div class="mt-4">
+                        <h6>Hasil Terjemahan:</h6>
+                        <p id="translationResult" class="text-muted"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -486,6 +533,24 @@
         });
     });
     </script>
+    <script>
+        async function translateWord(event) {
+            event.preventDefault(); // Mencegah form submit secara default
+
+            const input = document.getElementById('translator-input').value;
+
+            // Gunakan MyMemory API untuk terjemahan
+            const response = await fetch(`https://api.mymemory.translated.net/get?q=${input}&langpair=id|en`);
+            const data = await response.json();
+
+            // Ambil hasil terjemahan
+            const translation = data.responseData.translatedText;
+
+            // Tampilkan hasil terjemahan di modal
+            document.getElementById('translationResult').textContent = translation;
+        }
+    </script>
+
 
 
 </body>
