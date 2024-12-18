@@ -114,7 +114,7 @@
                     <ul class="side-dropdown">
                         <li><a href="{{ route('admin.daftar-siswa')}}"><i class='bx bxs-user-check icon'></i>Daftar Siswa</a></li>
                         <li><a href="{{ route('admin.tambah-siswa')}}"><i class='bx bxs-user-plus icon'></i>Tambah Siswa</a></li>
-                        <li><a href="{{ route('admin.skorsiswa') }}"><i class='bx bxs-bar-chart-alt-2 icon'></i>Hasil Evaluasi</a></li>
+                        <li><a href="{{-- {{ route('admin.hasil-evaluasi') }} --}}"><i class='bx bxs-bar-chart-alt-2 icon'></i>Hasil Evaluasi</a></li>
 
                     </ul>
                 </li>
