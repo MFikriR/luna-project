@@ -129,7 +129,8 @@ li {
 }
 
 #sidebar .side-dropdown a:hover {
-    background: var(--grey); /* Tambahkan efek hover */
+    background-color: #007bff; /* Tambahkan efek hover */
+    color: white;
 }
 
 /* Gaya untuk konten utama */
@@ -380,7 +381,7 @@ nav .profile .profile-link a:hover {
 .form-group select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #524fec;
     border-radius: 5px;
 }
 
