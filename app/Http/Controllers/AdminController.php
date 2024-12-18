@@ -31,5 +31,16 @@ class AdminController extends Controller
     {
         return view('admin.admindashboard'); // Ganti dengan nama view dashboard admin yang sesuai
     }
-}
+    public function logout(Request $request)
+    {
+        // Logout admin
+        auth('admin')->logout();
 
+        // Invalidate session
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        // Redirect ke halaman login admin
+        return redirect('/')->with('success', 'Anda berhasil logout.');
+    }
+}

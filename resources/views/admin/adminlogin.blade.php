@@ -84,6 +84,12 @@
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Login Admin</button>
                 </form>
+                <!-- Menampilkan pesan error jika ada -->
+                @if ($errors->has('error'))
+                    <div class="alert alert-danger">
+                        {{ $errors->first('error') }}
+                    </div>
+                @endif
             </div>
         </div>
     </div>

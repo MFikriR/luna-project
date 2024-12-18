@@ -133,6 +133,30 @@ li {
     color: white;
 }
 
+/* Tombol logout menyerupai link di sidebar */
+.logout-btn {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--dark);
+    padding: 12px 16px 12px 0;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin: 4px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    text-decoration: none; 
+}
+
+/* Hover efek untuk tombol logout */
+.logout-btn:hover {
+    background: var(--grey); /* Efek hover seperti elemen sidebar */
+    color: var(--blue); /* Sama dengan elemen sidebar saat hover */
+}
+
 /* Gaya untuk konten utama */
 
 /* NAVBAR */
@@ -491,4 +515,3 @@ select:focus {
 }
 
 /* Update Siswa */
-
