@@ -251,6 +251,8 @@
         </div>
             <!-- Latihan Soal -->
     </div>
+
+    <iframe src="https://scratch.mit.edu/projects/1089955768/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
 </div>
 
 <div class="pagination">
