@@ -374,6 +374,32 @@
             color: #007bff;
         }
 
+        .periksa-jawaban {
+            background-color: hsl(207, 65%, 50%); /* Warna latar hijau */
+            border: none; /* Hilangkan border */
+            color: white; /* Warna teks putih */
+            padding: 12px 20px; /* Jarak dalam tombol */
+            text-align: center; /* Teks di tengah */
+            text-decoration: none; /* Hilangkan garis bawah */
+            display: inline-block; /* Tampilkan sebagai elemen inline-block */
+            font-size: 16px; /* Ukuran font */
+            margin: 10px 5px; /* Jarak luar */
+            cursor: pointer; /* Pointer saat hover */
+            border-radius: 8px; /* Membuat sudut tombol melengkung */
+            transition: background-color 0.3s, transform 0.2s; /* Animasi saat hover */
+        }
+
+        .periksa-jawaban:hover {
+            background-color: #45a049; /* Warna latar lebih gelap saat hover */
+            transform: scale(1.05); /* Efek zoom sedikit saat hover */
+        }
+
+        .periksa-jawaban:active {
+            background-color: #3e8e41; /* Warna saat tombol ditekan */
+            transform: scale(0.95); /* Sedikit mengecil saat ditekan */
+        }
+
+
 
 
     </style>

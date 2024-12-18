@@ -92,7 +92,7 @@
             </ul>
         </div>
 
-        <button onclick="checkAnswers()">Periksa Jawaban</button>
+        <button class="periksa-jawaban" onclick="checkAnswers()">Periksa Jawaban</button>
 
         <p id="result"></p>
 
