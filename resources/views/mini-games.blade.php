@@ -89,6 +89,31 @@
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
         }
 
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff;
+            color: #8ECAE6;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .home-button:hover {
+            background-color: #219EBC;
+            color: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transform: scale(1.1);
+        }
+
         footer {
             margin-top: 50px;
             font-size: 14px;
@@ -97,6 +122,11 @@
     </style>
 </head>
 <body>
+
+    <!-- Tombol Home -->
+    <a href="{{ route('home') }}" class="home-button" title="Kembali ke Home">
+        <i class="fas fa-home"></i>
+    </a>
 
     <h1>Mini Games</h1>
 
