@@ -146,6 +146,9 @@ Route::delete('/siswa/{id}', [UserController::class, 'destroy'])->name('siswa.de
 // Tambah Siswa
 Route::get('/admin/tambah-siswa', [UserController::class, 'create'])->name('admin.tambah-siswa');
 Route::post('/admin/tambah-siswa', [UserController::class, 'store'])->name('admin.simpan-siswa');
+
+Route::get('/siswa/export-pdf', [AdminController::class, 'exportPDF'])->name('siswa.export-pdf');
+
 // ################################################################################################################################
 
 

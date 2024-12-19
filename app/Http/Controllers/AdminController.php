@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Score;
 use App\Models\Question;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -119,6 +121,14 @@ class AdminController extends Controller
         $question->delete();
 
         return redirect()->route('questions.index')->with('success', 'Pertanyaan berhasil dihapus!');
+    }
+
+    // Export PDF
+    public function exportPDF()
+    {
+        $siswas = User::all();
+        $pdf = Pdf::loadView('siswa-export-pdf', compact('siswas'));
+        return $pdf->download('daftar_siswa.pdf');
     }
 
 }
