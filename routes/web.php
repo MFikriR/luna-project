@@ -118,7 +118,7 @@ Route::get('/mini-games/percakapan', function () {
 
 
 
-// ADMIN (Do not change the route name)
+// ADMIN (Do not change the route name)########################################################################################
 // Rute untuk menampilkan form login admin
 Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('admin.login');
 
@@ -126,11 +126,16 @@ Route::get('/admin/login', [AdminController::class, 'showLoginForm'])->name('adm
 Route::post('/admin/login', [AdminController::class, 'login'])->name('admin.login.submit');
 
 // Rute untuk dashboard admin, dilindungi oleh middleware auth:admin
+Route::resource('questions', controller: AdminController::class);
 Route::middleware('auth:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/scores', [AdminController::class, 'scores'])->name('admin.skorsiswa');
+    Route::get('/questions', [AdminController::class, 'showQuestions'])->name('questions.index');
+        // Route untuk Tambah Pertanyaan
+    Route::get('/questions/create', [AdminController::class, 'create'])->name('questions.create');
+    Route::post('/questions', [AdminController::class, 'store'])->name('questions.store');
 });
 Route::post('/admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
-
 
 // Daftar Siswa
 Route::get('/admin/daftar-siswa', [UserController::class, 'index'])->name('admin.daftar-siswa');
@@ -141,7 +146,7 @@ Route::delete('/siswa/{id}', [UserController::class, 'destroy'])->name('siswa.de
 // Tambah Siswa
 Route::get('/admin/tambah-siswa', [UserController::class, 'create'])->name('admin.tambah-siswa');
 Route::post('/admin/tambah-siswa', [UserController::class, 'store'])->name('admin.simpan-siswa');
-// ----------------------------------------------------------------------------------------------------------- //
+// ################################################################################################################################
 
 
 

@@ -86,12 +86,6 @@ li {
     text-decoration: none
 }
 
-/* Sidebar ketika ditutup */
-#sidebar.hide {
-    width: 0;
-    overflow: hidden;
-    transition: width 0.3s ease;
-}
 
 #sidebar.hide .side-menu a {
     justify-content: center;
@@ -123,7 +117,7 @@ li {
 }
 
 #sidebar .side-dropdown a {
-    padding: 12px 32px; /* Tambahkan padding lebih besar di sebelah kiri */
+    padding: 12px 10px; /* Tambahkan padding lebih besar di sebelah kiri */
     color: var(--dark);
     text-decoration: none; /* Hilangkan garis bawah */
 }
@@ -148,7 +142,7 @@ li {
     cursor: pointer;
     width: 100%;
     text-align: left;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 /* Hover efek untuk tombol logout */
